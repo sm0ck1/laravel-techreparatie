@@ -1,7 +1,7 @@
 import GuestLayout from '@/Components/Layouts/GuestLayout';
-import InputError from '@/Components/InputError';
-import PrimaryButton from '@/Components/PrimaryButton';
-import TextInput from '@/Components/TextInput';
+// import InputError from '@/Components/InputError';
+// import PrimaryButton from '@/Components/PrimaryButton';
+// import TextInput from '@/Components/TextInput';
 import { Head, useForm } from '@inertiajs/react';
 
 export default function ForgotPassword({ status }) {
@@ -27,22 +27,22 @@ export default function ForgotPassword({ status }) {
             {status && <div className="mb-4 font-medium text-sm text-green-600">{status}</div>}
 
             <form onSubmit={submit}>
-                <TextInput
-                    id="email"
-                    type="email"
-                    name="email"
-                    value={data.email}
-                    className="mt-1 block w-full"
-                    isFocused={true}
-                    onChange={(e) => setData('email', e.target.value)}
-                />
+                {/*<TextInput*/}
+                {/*    id="email"*/}
+                {/*    type="email"*/}
+                {/*    name="email"*/}
+                {/*    value={data.email}*/}
+                {/*    className="mt-1 block w-full"*/}
+                {/*    isFocused={true}*/}
+                {/*    onChange={(e) => setData('email', e.target.value)}*/}
+                {/*/>*/}
 
-                <InputError message={errors.email} className="mt-2" />
+                {/*<InputError message={errors.email} className="mt-2" />*/}
 
                 <div className="flex items-center justify-end mt-4">
-                    <PrimaryButton className="ml-4" disabled={processing}>
-                        Email Password Reset Link
-                    </PrimaryButton>
+                    {/*<PrimaryButton className="ml-4" disabled={processing}>*/}
+                    {/*    Email Password Reset Link*/}
+                    {/*</PrimaryButton>*/}
                 </div>
             </form>
         </GuestLayout>
