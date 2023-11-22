@@ -12,22 +12,37 @@ class Repair extends Model
 
     protected $fillable = [
         'user_id',
-        'order_number',
+
         'customer_name',
         'customer_phone',
+
         'device',
         'problem_description',
-        'solution_description',
         'component',
         'note',
-        'date',
+
         'invoice',
         'cost',
         'price',
+
         'is_ordered_component',
+        'where_ordered',
+        'who_ordered_id',
+        'date_ordered',
+
         'is_called',
+        'date_called',
+
         'is_fixed',
+        'solution_description',
+        'date_fixed',
+
         'is_picked_up',
+        'date_picked_up',
+
+        'is_diagnostic',
+        'diagnostic_description',
+        'date_diagnostic',
     ];
 
     protected $appends = [
@@ -37,9 +52,8 @@ class Repair extends Model
     protected function Cost(): Attribute
     {
         return Attribute::make(
-            set: function (string $value) {
-                $value = str_replace(',', '.', $value);
-                return number_format((float)$value, 2);
+            set: function ($value) {
+                return number_format((float)$value, 2, '.', '');
             }
         );
     }
@@ -47,10 +61,38 @@ class Repair extends Model
     protected function Price(): Attribute
     {
         return Attribute::make(
-            set: function (string $value) {
-                $value = str_replace(',', '.', $value);
-                return number_format((float)$value, 2);
+            set: function ($value) {
+                return number_format((float)$value, 2, '.', '');
             }
+        );
+    }
+
+    protected function dateOrdered(): Attribute
+    {
+        return Attribute::make(
+            get: fn($value) => $value ? \Carbon\Carbon::parse($value)->format('d.m.Y') : null,
+        );
+    }
+
+    protected function dateCalled(): Attribute
+    {
+        return Attribute::make(
+            get: fn($value) => $value ? \Carbon\Carbon::parse($value)->format('d.m.Y') : null,
+        );
+    }
+
+
+    protected function dateFixed(): Attribute
+    {
+        return Attribute::make(
+            get: fn($value) => $value ? \Carbon\Carbon::parse($value)->format('d.m.Y') : null,
+        );
+    }
+
+    protected function datePickedUp(): Attribute
+    {
+        return Attribute::make(
+            get: fn($value) => $value ? \Carbon\Carbon::parse($value)->format('d.m.Y') : null,
         );
     }
 
@@ -60,6 +102,11 @@ class Repair extends Model
     }
 
     public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function whoOrdered()
     {
         return $this->belongsTo(User::class);
     }

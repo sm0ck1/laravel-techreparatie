@@ -4,7 +4,10 @@ import './app.scss';
 import {createRoot} from 'react-dom/client';
 import {createInertiaApp} from '@inertiajs/react';
 import {resolvePageComponent} from 'laravel-vite-plugin/inertia-helpers';
-import { SnackbarProvider } from 'notistack';
+import {SnackbarProvider} from 'notistack';
+import {QueryClient, QueryClientProvider,} from '@tanstack/react-query'
+
+const queryClient = new QueryClient()
 
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 
@@ -15,9 +18,11 @@ createInertiaApp({
         const root = createRoot(el);
 
         root.render(
-            <SnackbarProvider maxSnack={3}>
-                <App {...props} />
-            </SnackbarProvider>
+            <QueryClientProvider client={queryClient}>
+                <SnackbarProvider maxSnack={3}>
+                    <App {...props} />
+                </SnackbarProvider>
+            </QueryClientProvider>
         );
     },
     progress: {

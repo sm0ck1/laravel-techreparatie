@@ -1,13 +1,11 @@
-import { useEffect } from 'react';
-import GuestLayout from '@/Layouts/GuestLayout';
-import InputError from '@/Components/InputError';
-import InputLabel from '@/Components/InputLabel';
-import PrimaryButton from '@/Components/PrimaryButton';
-import TextInput from '@/Components/TextInput';
-import { Head, Link, useForm } from '@inertiajs/react';
+import {useEffect} from 'react';
+import GuestLayout from '@/Components/Layouts/GuestLayout';
+import {Head, Link, useForm} from '@inertiajs/react';
+import Paper from "@mui/material/Paper";
+import {Box, Button, TextField} from "@mui/material";
 
 export default function Register() {
-    const { data, setData, post, processing, errors, reset } = useForm({
+    const {data, setData, post, processing, errors, reset} = useForm({
         name: '',
         email: '',
         password: '',
@@ -28,89 +26,95 @@ export default function Register() {
 
     return (
         <GuestLayout>
-            <Head title="Register" />
+            <Head title="Register"/>
 
             <form onSubmit={submit}>
-                <div>
-                    <InputLabel htmlFor="name" value="Name" />
+                <Paper sx={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: 3,
+                    padding: 3,
+                    width: '400px',
+                }}>
+                    <div>
+                        <TextField
+                            fullWidth
+                            error={!!errors.name}
+                            helperText={!!errors.name && errors.name}
+                            isFocused={true}
+                            value={data.name}
+                            autoComplete="name"
+                            id="name"
+                            type="text"
+                            name="name"
+                            label="Name"
+                            variant="outlined"
+                            onChange={(e) => setData('name', e.target.value)}
+                        />
+                    </div>
 
-                    <TextInput
-                        id="name"
-                        name="name"
-                        value={data.name}
-                        className="mt-1 block w-full"
-                        autoComplete="name"
-                        isFocused={true}
-                        onChange={(e) => setData('name', e.target.value)}
-                        required
-                    />
+                    <div>
+                        <TextField
+                            fullWidth
+                            error={!!errors.email}
+                            helperText={!!errors.email && errors.email}
+                            value={data.email}
+                            autoComplete="username"
+                            id="email"
+                            type="email"
+                            name="email"
+                            label="Email"
+                            variant="outlined"
+                            onChange={(e) => setData('email', e.target.value)}
+                        />
+                    </div>
 
-                    <InputError message={errors.name} className="mt-2" />
-                </div>
+                    <div>
+                        <TextField
+                            fullWidth
+                            variant="outlined"
+                            error={!!errors.password}
+                            helperText={!!errors.password && errors.password}
+                            value={data.password}
+                            id="password"
+                            type="password"
+                            name="password"
+                            label="Password"
+                            onChange={(e) => setData('password', e.target.value)}
+                        />
+                    </div>
 
-                <div className="mt-4">
-                    <InputLabel htmlFor="email" value="Email" />
+                    <div className="mt-4">
+                        <TextField
+                            fullWidth
+                            variant="outlined"
+                            error={!!errors.password_confirmation}
+                            helperText={!!errors.password_confirmation && errors.password_confirmation}
+                            value={data.password_confirmation}
+                            id="password_confirmation"
+                            type="password"
+                            name="password_confirmation"
+                            label="Confirm Password"
+                            onChange={(e) => setData('password_confirmation', e.target.value)}
+                        />
+                    </div>
+                    <Box sx={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'space-between',
+                    }}>
+                        <Link
+                            href={route('login')}
+                            className="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                        >
+                            Already registered?
+                        </Link>
 
-                    <TextInput
-                        id="email"
-                        type="email"
-                        name="email"
-                        value={data.email}
-                        className="mt-1 block w-full"
-                        autoComplete="username"
-                        onChange={(e) => setData('email', e.target.value)}
-                        required
-                    />
-
-                    <InputError message={errors.email} className="mt-2" />
-                </div>
-
-                <div className="mt-4">
-                    <InputLabel htmlFor="password" value="Password" />
-
-                    <TextInput
-                        id="password"
-                        type="password"
-                        name="password"
-                        value={data.password}
-                        className="mt-1 block w-full"
-                        autoComplete="new-password"
-                        onChange={(e) => setData('password', e.target.value)}
-                        required
-                    />
-
-                    <InputError message={errors.password} className="mt-2" />
-                </div>
-
-                <div className="mt-4">
-                    <InputLabel htmlFor="password_confirmation" value="Confirm Password" />
-
-                    <TextInput
-                        id="password_confirmation"
-                        type="password"
-                        name="password_confirmation"
-                        value={data.password_confirmation}
-                        className="mt-1 block w-full"
-                        autoComplete="new-password"
-                        onChange={(e) => setData('password_confirmation', e.target.value)}
-                        required
-                    />
-
-                    <InputError message={errors.password_confirmation} className="mt-2" />
-                </div>
-
-                <div className="flex items-center justify-end mt-4">
-                    <Link
-                        href={route('login')}
-                        className="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                    >
-                        Already registered?
-                    </Link>
-
-                    <PrimaryButton className="ml-4" disabled={processing}>
-                        Register
-                    </PrimaryButton>
-                </div>
+                        <Button type='submit' variant="contained" disabled={processing}>
+                            Register
+                        </Button>
+                    </Box>
+                </Paper>
             </form>
         </GuestLayout>
     );

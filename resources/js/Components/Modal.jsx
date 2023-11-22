@@ -12,7 +12,8 @@ export default function ModalMui({children, open = false, onClose, title = '', w
         height: '90%',
         overflow: 'scroll',
         boxShadow: 24,
-        p: 4
+        p: 4,
+        backgroundColor: '#f5f5f5',
     };
     return (
         <Modal
@@ -23,7 +24,13 @@ export default function ModalMui({children, open = false, onClose, title = '', w
         >
             <Paper maxWidth={width} sx={style} component={Container}>
                 {title && (
-                    <Typography textAlign='center' variant='h4'>{title}</Typography>
+                    <Typography textAlign='center' variant='h4' sx={{
+                        mb: 2,
+                        p: 1,
+                        borderRadius: 1,
+                        boxShadow: 1,
+                        backgroundColor: '#fff',
+                    }}>{title}</Typography>
                 )}
                 {children}
             </Paper>

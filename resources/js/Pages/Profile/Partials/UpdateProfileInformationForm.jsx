@@ -3,7 +3,7 @@ import BlockDivider from "@/Pages/Components/BlockDivider.jsx";
 import InputText from "@/Pages/Components/InputText.jsx";
 import * as React from "react";
 import {LoadingButton} from "@mui/lab";
-import {snackBarStore} from "@/store/snackBarStore.js";
+import {snackBarStore} from "@/shared/store/snackBarStore.js";
 import {enqueueSnackbar} from "notistack";
 
 export default function UpdateProfileInformation() {

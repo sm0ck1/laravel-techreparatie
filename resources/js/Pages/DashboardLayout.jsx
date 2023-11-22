@@ -1,5 +1,5 @@
 import React from 'react';
-import {Head, Link, router, usePage} from "@inertiajs/react";
+import {Head, router, usePage} from "@inertiajs/react";
 import {AppBar, Avatar, Box, Button, IconButton, Menu, MenuItem, Toolbar, Tooltip, Typography} from "@mui/material";
 import Container from '@mui/material/Container';
 import AdbIcon from '@mui/icons-material/Adb';
@@ -66,8 +66,7 @@ const DashboardLayout = ({header, children, submenu = null}) => {
             <AppBar position="static">
                 <Container maxWidth="xl">
                     <Toolbar disableGutters>
-                        <AdbIcon sx={{display: {xs: 'none', md: 'flex'}, mr: 1}}/>
-                        <Typography
+                        <Box
                             variant="h6"
                             noWrap
                             component="a"
@@ -75,15 +74,10 @@ const DashboardLayout = ({header, children, submenu = null}) => {
                             sx={{
                                 mr: 2,
                                 display: {xs: 'none', md: 'flex'},
-                                fontFamily: 'monospace',
-                                fontWeight: 700,
-                                letterSpacing: '.3rem',
-                                color: 'inherit',
-                                textDecoration: 'none',
                             }}
                         >
-                            LOGO
-                        </Typography>
+                            <img width="100" src="https://www.techreparatie.nl/wp-content/uploads/2021/02/techreparatie.png" alt=""/>
+                        </Box>
 
                         <Box sx={{flexGrow: 1, display: {xs: 'flex', md: 'none'}}}>
                             <IconButton
@@ -121,32 +115,25 @@ const DashboardLayout = ({header, children, submenu = null}) => {
                                 ))}
                             </Menu>
                         </Box>
-                        <AdbIcon sx={{display: {xs: 'flex', md: 'none'}, mr: 1}}/>
                         <Typography
-                            variant="h5"
-                            noWrap
-                            component="a"
-                            href="#app-bar-with-responsive-menu"
                             sx={{
                                 mr: 2,
                                 display: {xs: 'flex', md: 'none'},
                                 flexGrow: 1,
-                                fontFamily: 'monospace',
-                                fontWeight: 700,
-                                letterSpacing: '.3rem',
-                                color: 'inherit',
-                                textDecoration: 'none',
+                                width: '100px',
                             }}
                         >
-                            LOGO
+                            <img width="100" src="https://www.techreparatie.nl/wp-content/uploads/2021/02/techreparatie.png" alt=""/>
                         </Typography>
+
                         <Box sx={{flexGrow: 1, display: {xs: 'none', md: 'flex'}}}>
                             {pages.map((page) => (
                                 <Button
                                     key={page.key}
                                     disabled={route().current() === page.key}
                                     onClick={() => handleCloseNavMenu(page.key)}
-                                    sx={{my: 2, color: 'white', display: 'block'}}
+                                    variant={route().current() === page.key ? 'contained' : 'text'}
+                                    sx={{my: 2, color: 'white', display: 'block', '&:disabled': {color: 'white'}}}
                                 >
                                     {page.label}
                                 </Button>

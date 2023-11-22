@@ -1,97 +1,61 @@
 import * as React from "react";
 import TableRow from "@mui/material/TableRow";
 import TableCell from "@mui/material/TableCell";
-import {Box, Button, Collapse, IconButton, TextField, Typography} from "@mui/material";
+import {Box, Collapse, IconButton, Typography} from "@mui/material";
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
-import ToggleCompleted from "@/Pages/Repairs/Components/ToggleComplited.jsx";
-import BlockInfo from "@/Pages/Repairs/Components/BlockInfo.jsx";
-import {router} from "@inertiajs/react";
-import ModalMui from "@/Components/Modal.jsx";
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+import BlockInfo from "@/Pages/Repairs/BlockInfo/BlockInfo.jsx";
+import BlockFixed from "@/Pages/Repairs/BlockFixed/BlockFixed.jsx";
+import BlockPickedUp from "@/Pages/Repairs/BlockPickedUp/BlockPickedUp.jsx";
+import BlockOrdered from "@/Pages/Repairs/BlockOrdered/BlockOrdered.jsx";
+import BlockCalled from "@/Pages/Repairs/BlockCalled/BlockCalled.jsx";
+import {dateCreate} from "@/shared/helpers/formatDate.js";
+import {blue} from "@mui/material/colors";
+import BlockDiagnostic from "@/Pages/Repairs/BlockDiagnostic/BlockDiagnostic.jsx";
 
-const Row = ({repair}) => {
+const Row = ({repair, open, setOpen}) => {
 
-    const [data, setData] = React.useState({});
-    const [open, setOpen] = React.useState(false);
-    const [openModal, setOpenModal] = React.useState(false);
-    const [disable, setDisable] = React.useState(false);
-
-    const handleUpdateStatuses = async (field, newState) => {
-        setDisable(true);
-        data[field] = newState;
-        await handlePatch(data);
-
-        setDisable(false);
-
-        if (field === 'is_fixed' && newState === true) {
-            setOpenModal(true);
-        }
-    }
-
-    const handlePatch = async (data) => {
-        const res = await axios.patch(route('repairs.update', {
-            'repair': repair.id,
-        }), data);
-        if (res.status === 200) {
-            router.reload({only: ['repairs']});
-        }
-        setData({});
-    }
-
-    const handleSaveAndSendSMS = async () => {
-        await handlePatch({...data, send_sms: true});
-
-        handleClosedEditSolution();
-    }
-
-
-    const handleSave = async () => {
-        await handlePatch(data);
-
-        handleClosedEditSolution();
-    }
-
-    const handleClosedEditSolution = () => {
-        setDisable(false);
-        setOpenModal(false);
-    };
     return (
         <>
-            <ModalMui open={openModal} onClose={handleClosedEditSolution}>
-                <Box sx={{display: 'flex', gap: 5, flexDirection: 'column'}}>
-                    <Box>
-                        <TextField value={data.solution_description}
-                                      onChange={(e) => setData({solution_description: e.target.value})}
-                                   sx={{width: '100%'}} id="outlined-basic" label="What we fixed/did"
-                                   variant="outlined"/>
-                    </Box>
-                    <Box sx={{display: 'flex', gap: 3}}>
-                        <Button variant="contained" onClick={handleSave}>Save</Button>
-                        <Button variant="contained" onClick={handleSaveAndSendSMS}>Save and send SMS</Button>
-                    </Box>
-                </Box>
-            </ModalMui>
             <TableRow
                 key={repair.id}
-                sx={{'&:last-child td, &:last-child th': {border: 0}}}
+                sx={{
+                    '&:last-child td, &:last-child th': {border: 0},
+                    borderLeft: open === repair.id ? `5px solid ${blue[700]}` : 'none',
+                    '&:hover': {backgroundColor: '#f5f5f5'}
+                }}
             >
-                <TableCell>
+                <TableCell
+                    sx={{
+                        width: 50,
+                        textAlign: 'center'
+                    }}
+                >
                     <IconButton
                         aria-label="expand row"
                         size="small"
-                        onClick={() => setOpen(!open)}
+                        onClick={() => setOpen(open === repair.id ? false : repair.id)}
                     >
-                        {open ? <KeyboardArrowUpIcon/> : <KeyboardArrowDownIcon/>}
+                        {open === repair.id ? <KeyboardArrowDownIcon/> : <KeyboardArrowRightIcon/>}
                     </IconButton>
                 </TableCell>
 
                 <TableCell component="th" scope="row">
-                    <Typography variant='h6'>
-                        {repair.id}
-                    </Typography>
-                    <Typography sx={{color: '#555'}} variant="body2" gutterBottom>
-                        {repair.date}
-                    </Typography>
+                    <Box
+                        sx={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            gap: 1,
+                            alignItems: 'center'
+                        }}
+                    >
+                        <Typography variant='h6'>
+                            {repair.id}
+                        </Typography>
+                        <Typography sx={{color: '#555'}} variant="body2" gutterBottom>
+                            {dateCreate(repair.created_at)}
+                        </Typography>
+                    </Box>
                 </TableCell>
                 <TableCell>
                     <b>Device: </b> {repair.device}
@@ -100,27 +64,30 @@ const Row = ({repair}) => {
                     <br/>
                     <b>Need to order: </b> {repair.component}
                 </TableCell>
-                <TableCell>
-                    Vitalii
+                <TableCell align='center'>
+                    <BlockDiagnostic repair={repair}/>
+                </TableCell>
+
+                <TableCell align='center'>
+                    <BlockOrdered repair={repair}/>
                 </TableCell>
                 <TableCell align='center'>
-                    <ToggleCompleted disabled={disable} fieldName='is_ordered_component' record={repair}
-                                     handleChanged={handleUpdateStatuses}/>
+                    <BlockFixed repair={repair}/>
                 </TableCell>
                 <TableCell align='center'>
-                    <ToggleCompleted disabled={disable} fieldName='is_called' record={repair}
-                                     handleChanged={handleUpdateStatuses}/>
+                    <BlockCalled repair={repair}/>
                 </TableCell>
                 <TableCell align='center'>
-                    <ToggleCompleted disabled={disable} fieldName='is_fixed' record={repair}
-                                     handleChanged={handleUpdateStatuses}/>
+                    <BlockPickedUp repair={repair}/>
                 </TableCell>
-                <TableCell align='center'><ToggleCompleted disabled={disable} fieldName='is_picked_up' record={repair}
-                                                           handleChanged={handleUpdateStatuses}/></TableCell>
             </TableRow>
-            <TableRow>
+            <TableRow
+                sx={{
+                    borderLeft: open === repair.id ? `5px solid ${blue[700]}` : 'none'
+                }}
+            >
                 <TableCell style={{paddingBottom: 0, paddingTop: 0}} colSpan={9}>
-                    <Collapse in={open} timeout="auto" unmountOnExit>
+                    <Collapse in={open === repair.id} timeout="auto" unmountOnExit>
                         <BlockInfo repair={repair}/>
                     </Collapse>
                 </TableCell>

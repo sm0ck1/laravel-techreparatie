@@ -24,6 +24,8 @@ class RepairUpdateRequest extends FormRequest
     {
 
         return [
+            'user_id'              => 'nullable',
+            'who_ordered_id'       => 'nullable',
             'order_number'         => 'nullable',
             'customer_name'        => 'nullable',
             'customer_phone'       => 'nullable',

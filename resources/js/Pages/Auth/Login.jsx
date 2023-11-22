@@ -1,17 +1,16 @@
-import { useEffect } from 'react';
-import Checkbox from '@/Components/Checkbox';
-import GuestLayout from '@/Layouts/GuestLayout';
-import InputError from '@/Components/InputError';
-import InputLabel from '@/Components/InputLabel';
-import PrimaryButton from '@/Components/PrimaryButton';
-import TextInput from '@/Components/TextInput';
-import { Head, Link, useForm } from '@inertiajs/react';
+import {useEffect} from 'react';
+import GuestLayout from '@/Components/Layouts/GuestLayout';
+import {Head, Link, useForm, usePage} from '@inertiajs/react';
+import {Box, Button, Checkbox, FormControlLabel, TextField} from "@mui/material";
+import Paper from "@mui/material/Paper";
 
-export default function Login({ status, canResetPassword }) {
-    const { data, setData, post, processing, errors, reset } = useForm({
+export default function Login({status, canResetPassword}) {
+
+    const {flash} = usePage().props
+    const {data, setData, post, processing, errors, reset} = useForm({
         email: '',
         password: '',
-        remember: false,
+        remember: true,
     });
 
     useEffect(() => {
@@ -28,69 +27,89 @@ export default function Login({ status, canResetPassword }) {
 
     return (
         <GuestLayout>
-            <Head title="Log in" />
-
-            {status && <div className="mb-4 font-medium text-sm text-green-600">{status}</div>}
+            <Head title="Log in"/>
 
             <form onSubmit={submit}>
-                <div>
-                    <InputLabel htmlFor="email" value="Email" />
+                <Paper sx={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: 3,
+                    padding: 3,
+                    width: '400px',
+                    backgroundColor: '#f5f5f5',
+                }}>
+                    {flash.message && (
+                        <Box
+                            sx={{
+                                display: 'flex',
+                                justifyContent: 'center',
+                                color: 'red',
+                                fontWeight: 'bold',
+                                fontSize: '1.2rem',
+                            }}
+                        >
+                            {flash.message}
+                        </Box>
+                    )}
+                    <div>
 
-                    <TextInput
-                        id="email"
-                        type="email"
-                        name="email"
-                        value={data.email}
-                        className="mt-1 block w-full"
-                        autoComplete="username"
-                        isFocused={true}
-                        onChange={(e) => setData('email', e.target.value)}
-                    />
+                        <TextField
+                            fullWidth
+                            error={!!errors.email}
+                            helperText={!!errors.email && errors.email}
+                            isFocused={true}
+                            value={data.email}
+                            autoComplete="username"
+                            id="email"
+                            type="email"
+                            name="email"
+                            label="Email"
+                            variant="outlined"
+                            onChange={(e) => setData('email', e.target.value)}
+                        />
+                    </div>
 
-                    <InputError message={errors.email} className="mt-2" />
-                </div>
+                    <div className="mt-4">
+                        <TextField
+                            fullWidth
+                            variant="outlined"
+                            error={!!errors.password}
+                            helperText={!!errors.password && errors.password}
+                            value={data.password}
+                            id="password"
+                            type="password"
+                            name="password"
+                            label="Password"
+                            onChange={(e) => setData('password', e.target.value)}
+                        />
+                    </div>
 
-                <div className="mt-4">
-                    <InputLabel htmlFor="password" value="Password" />
-
-                    <TextInput
-                        id="password"
-                        type="password"
-                        name="password"
-                        value={data.password}
-                        className="mt-1 block w-full"
-                        autoComplete="current-password"
-                        onChange={(e) => setData('password', e.target.value)}
-                    />
-
-                    <InputError message={errors.password} className="mt-2" />
-                </div>
-
-                <div className="block mt-4">
-                    <label className="flex items-center">
-                        <Checkbox
+                    <div>
+                        <FormControlLabel control={<Checkbox
                             name="remember"
                             checked={data.remember}
                             onChange={(e) => setData('remember', e.target.checked)}
-                        />
-                        <span className="ml-2 text-sm text-gray-600">Remember me</span>
-                    </label>
-                </div>
+                        />} label="Remember me"/>
 
-                <div className="flex items-center justify-end mt-4">
-                    {canResetPassword && (
-                        <Link
-                            href={route('password.request')}
-                            className="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                        >
-                            Forgot your password?
-                        </Link>
-                    )}
+                    </div>
+                    <Box sx={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'space-between',
+                    }}>
+                        {canResetPassword && (
+                            <Link
+                                href={route('register')}
+                            >
+                                Register
+                            </Link>
+                        )}
 
-                    <PrimaryButton className="ml-4" disabled={processing}>
-                        Log in
-                    </PrimaryButton>
-                </div>
+                        <Button type='submit' variant="contained" disabled={processing}>
+                            Log in
+                        </Button>
+                    </Box>
+                </Paper>
             </form>
         </GuestLayout>
     );

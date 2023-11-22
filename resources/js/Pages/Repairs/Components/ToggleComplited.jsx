@@ -1,8 +1,9 @@
 import CheckIcon from "@mui/icons-material/Check";
-import RemoveIcon from "@mui/icons-material/Remove";
 import * as React from "react";
 import {useEffect} from "react";
 import {LoadingButton} from "@mui/lab";
+import LocalShippingIcon from '@mui/icons-material/LocalShipping';
+import RemoveIcon from "@mui/icons-material/Remove";
 
 const ToggleCompleted = ({disabled, fieldName, record, handleChanged}) => {
     const [selected, setSelected] = React.useState(false);
@@ -22,7 +23,10 @@ const ToggleCompleted = ({disabled, fieldName, record, handleChanged}) => {
                 handleChanged(fieldName, newState);
             }}
         >
-            {selected ? <CheckIcon/> : <RemoveIcon />}
+            {selected ? (
+                    fieldName === 'is_ordered_component' ? <LocalShippingIcon/> : <CheckIcon/>
+                )
+                : <RemoveIcon/>}
         </LoadingButton>
     );
 }
