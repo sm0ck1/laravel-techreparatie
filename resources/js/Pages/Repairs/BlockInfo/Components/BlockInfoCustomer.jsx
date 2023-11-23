@@ -1,10 +1,11 @@
 import {TextField} from "@mui/material";
 import BlockInfoLayout from "@/Pages/Repairs/BlockInfo/Components/BlockInfoLayout.jsx";
 import * as React from "react";
+import {compareWithCurrentTime, dateCreate} from "@/shared/helpers/formatDate.js";
 
 const BlockInfoCustomer = ({repair}) => {
     return (
-        <BlockInfoLayout title='Customer info'>
+        <BlockInfoLayout title='Customer info' date={dateCreate(repair.created_at)}>
             <TextField
                 size='small'
                 label="Customer name"
@@ -21,6 +22,29 @@ const BlockInfoCustomer = ({repair}) => {
                     readOnly: true,
                 }}
             />
+            {!!repair.is_called && (
+                <TextField
+                    color={compareWithCurrentTime(repair.date_called) > 1 && !repair.is_picked_up ? 'warning' : 'success'}
+                    focused
+                    size='small'
+                    label="Called date"
+                    defaultValue={repair.date_called}
+                    InputProps={{
+                        readOnly: true,
+                    }}
+                />
+            )}
+            {!!repair.is_picked_up && (
+                <TextField
+                    size='small'
+                    label="Invoice"
+                    defaultValue={repair.invoice}
+                    InputProps={{
+                        readOnly: true,
+                    }}
+
+                />
+            )}
         </BlockInfoLayout>
     );
 }

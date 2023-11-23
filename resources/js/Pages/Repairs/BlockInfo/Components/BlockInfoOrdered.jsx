@@ -8,7 +8,7 @@ const BlockInfoOrdered = ({repair}) => {
         return null;
     }
     return (
-        <BlockInfoLayout title='Ordered'>
+        <BlockInfoLayout title='Ordered' date={repair.date_ordered}>
             <TextField
                 size='small'
                 label="Who ordered"

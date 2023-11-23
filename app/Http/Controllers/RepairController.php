@@ -6,6 +6,7 @@ use App\Http\Requests\RepairCalledRequest;
 use App\Http\Requests\RepairDiagnosticRequest;
 use App\Http\Requests\RepairFixedRequest;
 use App\Http\Requests\RepairOrderedRequest;
+use App\Http\Requests\RepairPickedUpRequest;
 use App\Http\Requests\RepairStoreRequest;
 use App\Http\Requests\RepairUpdateRequest;
 use App\Models\Repair;
@@ -21,10 +22,12 @@ class RepairController extends Controller
         $repairs = QueryBuilder::for(Repair::class)->with(['user', 'whoOrdered'])->allowedFilters(['is_fixed', 'is_ordered_component', 'is_picked_up', 'is_called'])->orderBy('created_at', 'DESC')->paginate();
         $employees = User::where('role', 'employee')->where('access', true)->get();
         $groupWhereOrdered = Repair::whereNotNull('where_ordered')->groupBy('where_ordered')->get(['where_ordered']);
+        $groupDevices = Repair::whereNotNull('device')->groupBy('device')->get(['device']);
         return Inertia::render('Repairs/Repairs', [
             'repairs'           => $repairs,
             'employees'         => $employees,
-            'groupWhereOrdered' => $groupWhereOrdered
+            'groupWhereOrdered' => $groupWhereOrdered,
+            'groupDevices'      => $groupDevices
         ]);
     }
 
@@ -111,6 +114,23 @@ class RepairController extends Controller
     {
         $updateRepair = $request->all();
         $updateRepair['date_diagnostic'] = date('Y-m-d H:i:s');
+        $repair->update($updateRepair);
+        if ($repair->save()) {
+            return response()->json([
+                'message' => 'Repair updated successfully',
+                'res'     => $repair
+            ]);
+        }
+        return response()->json([
+            'message' => 'Repair updated failed',
+            'res'     => $repair
+        ]);
+    }
+
+    public function updatePickedUp(Repair $repair, RepairPickedUpRequest $request)
+    {
+        $updateRepair = $request->all();
+        $updateRepair['date_picked_up'] = date('Y-m-d H:i:s');
         $repair->update($updateRepair);
         if ($repair->save()) {
             return response()->json([

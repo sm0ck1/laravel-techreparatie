@@ -6,13 +6,14 @@ import {useEffect} from "react";
 import {useForm} from "@inertiajs/react";
 import InputText from "@/Pages/Components/InputText.jsx";
 import {LoadingButton} from "@mui/lab";
+import { Autocomplete } from '@mui/material'
 import {repairStore} from "@/shared/store/repairStore.js";
 import {useSnapshot} from "valtio";
 
 const ModalCreate = ({open, handleClose}) => {
 
     const snapRepairStore = useSnapshot(repairStore);
-    const employees = snapRepairStore.employees;
+    const groupDevices = snapRepairStore.groupDevices;
 
     const form = useForm({
         customer_name: "",
@@ -60,7 +61,21 @@ const ModalCreate = ({open, handleClose}) => {
                 <InputText label='Phone' form={form} name='customer_phone' props={{fullWidth: true}}/>
             </BlockDivider>
             <BlockDivider title='Device'>
-                <InputText label='Device name' form={form} name='device' props={{fullWidth: true}}/>
+                <Autocomplete
+                    id="free-solo-demo"
+                    fullWidth
+                    freeSolo
+                    options={groupDevices.map((option) => option.device)}
+                    renderInput={(params) => <TextField
+                        error={!!form.errors?.device}
+                        helperText={form.errors?.device}
+                        value={form.data.device || ''}
+                        onChange={(e) => form.setData('device', e.target.value)}
+                        {...params}
+                        label="Device"/>
+                    }
+                />
+
                 <InputText label='Problem description' form={form} name='problem_description'
                            props={{fullWidth: true}}/>
             </BlockDivider>

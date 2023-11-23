@@ -5,7 +5,7 @@ import * as React from "react";
 const BlockInfoFixed = ({repair}) => {
     if (!repair.is_fixed) return null;
     return (
-        <BlockInfoLayout title='Fixed'>
+        <BlockInfoLayout title='Fixed' date={repair.date_fixed}>
             <TextField
                 size='small'
                 label="Who fixed"

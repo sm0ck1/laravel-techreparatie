@@ -33,7 +33,6 @@ class RepairUpdateRequest extends FormRequest
             'problem_description'  => 'nullable',
             'solution_description' => 'nullable',
             'note'                 => 'nullable',
-            'date'                 => 'nullable',
             'order'                => 'nullable',
             'invoice'              => 'nullable',
             'cost'                 => 'nullable',

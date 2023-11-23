@@ -1,12 +1,11 @@
 import {LoadingButton} from "@mui/lab";
-import CheckIcon from "@mui/icons-material/Check.js";
-import RemoveIcon from "@mui/icons-material/Remove.js";
+import CheckIcon from "@mui/icons-material/Check";
+import RemoveIcon from "@mui/icons-material/Remove";
 import {useEffect, useState} from "react";
 import ConfirmDialog from "@/Pages/Repairs/Components/ConfirmDialog.jsx";
-import {handlePatch} from "@/shared/queries/repairPatch.js";
-import {router} from "@inertiajs/react";
 import ModalMui from "@/Components/Modal.jsx";
 import {Box, TextField} from "@mui/material";
+import useMutationPickedUp from "@/shared/hooks/useMutationPickedUp.js";
 
 const BlockPickedUp = ({repair}) => {
     const field = 'is_picked_up';
@@ -14,14 +13,17 @@ const BlockPickedUp = ({repair}) => {
     const [selected, setSelected] = useState(false);
     const [confirmOpen, setConfirmOpen] = useState(false);
     const [modalOpen, setModalOpen] = useState(false);
-    const [disable, setDisable] = useState(false);
+    const {mutate, isPending, error, isError, isSuccess} = useMutationPickedUp();
+
     const [data, setData] = useState({
-        invoice: repair['invoice'] ?? '',
+        invoice: '',
+        [field]: false,
     });
+
 
     useEffect(() => {
         setSelected(!!repair[field]);
-    }, []);
+    }, [repair]);
 
     const handleField = async () => {
         if (!repair[field]) {
@@ -31,24 +33,16 @@ const BlockPickedUp = ({repair}) => {
         }
     }
 
-    const processSave = async (cb) => {
-        setDisable(true);
-        await cb();
-        setSelected(!selected);
-        setDisable(false);
-    };
-
     const unmarkField = async () => {
-        await processSave(async () => {
-            await handlePatch(repair, {[field]: false});
+        mutate({
+            id: repair.id,
+            props: {[field]: false, invoice: ''}
         });
     }
 
     const handleSave = async () => {
-        await processSave(async () => {
-            await handlePatch(repair, {...data, is_picked_up: true});
-            handleModalClosed();
-        });
+        mutate({id: repair.id, props: {...data, [field]: true}});
+        handleModalClosed();
     }
 
     const handleModalClosed = () => {
@@ -57,16 +51,19 @@ const BlockPickedUp = ({repair}) => {
 
     return (
         <>
-            <ModalMui open={modalOpen} onClose={handleModalClosed} title={'Set pickup'}>
+            <ModalMui open={modalOpen} onClose={handleModalClosed} title={'Picked Up'}>
                 <Box sx={{display: 'flex', gap: 5, flexDirection: 'column'}}>
                     <Box>
                         <TextField value={data.invoice}
-                                   onChange={(e) => setData({invoice: e.target.value})}
+                                   onChange={(e) => setData({...data, invoice: e.target.value})}
+                                   error={isError}
+                                   helperText={error?.invoice}
                                    sx={{width: '100%'}} id="outlined-basic" label="Invoice #"
-                                   variant="outlined"/>
+                                   variant="outlined"
+                        />
                     </Box>
                     <Box sx={{display: 'flex', gap: 3}}>
-                        <LoadingButton loading={disable} variant="contained" onClick={handleSave}>Save</LoadingButton>
+                        <LoadingButton loading={isPending} variant="contained" onClick={handleSave}>Save</LoadingButton>
                     </Box>
                 </Box>
             </ModalMui>
@@ -79,7 +76,7 @@ const BlockPickedUp = ({repair}) => {
                 Are you sure? It will be unmarked as picked up.
             </ConfirmDialog>
             <LoadingButton
-                loading={disable}
+                loading={isPending}
                 color={selected ? "success" : "error"}
                 size="small"
                 variant="text"

@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RepairController;
 use Illuminate\Foundation\Application;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -18,12 +19,14 @@ use Inertia\Inertia;
 */
 
 Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
+    return Redirect::to('/dashboard');
+
+//    return Inertia::render('Welcome', [
+//        'canLogin' => Route::has('login'),
+//        'canRegister' => Route::has('register'),
+//        'laravelVersion' => Application::VERSION,
+//        'phpVersion' => PHP_VERSION,
+//    ]);
 });
 
 Route::get('/dashboard', function () {
@@ -45,6 +48,7 @@ Route::middleware('auth')->group(function () {
     Route::patch('/repairs/{repair}/fixed', [RepairController::class, 'updateFixed'])->name('repairs.update.fixed');
     Route::patch('/repairs/{repair}/called', [RepairController::class, 'updateCalled'])->name('repairs.update.called');
     Route::patch('/repairs/{repair}/diagnostic', [RepairController::class, 'updateDiagnostic'])->name('repairs.update.diagnostic');
+    Route::patch('/repairs/{repair}/picked', [RepairController::class, 'updatePickedUp'])->name('repairs.update.picked');
 });
 
 Route::middleware('auth')->group(function (){

@@ -14,7 +14,7 @@ import {repairStore} from "@/shared/store/repairStore.js";
 import {Link} from "@inertiajs/react";
 // import SearchIcon from '@mui/icons-material/Search';
 
-const Repairs = ({repairs, employees, groupWhereOrdered}) => {
+const Repairs = ({repairs, employees, groupWhereOrdered, groupDevices}) => {
     const [openCreateModal, setOpenCreateModal] = React.useState(false);
     const [open, setOpen] = React.useState(false);
 
@@ -28,7 +28,8 @@ const Repairs = ({repairs, employees, groupWhereOrdered}) => {
 
     useEffect(() => {
         repairStore.employees = employees;
-        repairStore.groupWhereOrdered = groupWhereOrdered;
+        repairStore.groupWhereOrdered = groupWhereOrdered || [];
+        repairStore.groupDevices = groupDevices || [];
     }, [groupWhereOrdered]);
 
     useEffect(() => {
@@ -76,14 +77,14 @@ const Repairs = ({repairs, employees, groupWhereOrdered}) => {
                     flexDirection: 'row',
                     gap: 2,
                 }}>
-                    <Box>
-                        <TextField
-                            sx={{maxWidth: '300px', width: '100%', flexGrow: 1}}
-                            size='small'
-                            id="search-field"
-                            label="Search"
-                        />
-                    </Box>
+                    {/*<Box>*/}
+                    {/*    <TextField*/}
+                    {/*        sx={{maxWidth: '300px', width: '100%', flexGrow: 1}}*/}
+                    {/*        size='small'*/}
+                    {/*        id="search-field"*/}
+                    {/*        label="Search"*/}
+                    {/*    />*/}
+                    {/*</Box>*/}
                     <ButtonGroup variant="contained" aria-label="outlined primary button group">
                         {links.map((link, i) => {
                             return (

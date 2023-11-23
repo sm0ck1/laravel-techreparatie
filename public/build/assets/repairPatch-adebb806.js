@@ -1,1 +1,0 @@
-import{y as e}from"./app-a04bbed2.js";const i=async(r,t,s="repairs.update")=>{const a=await axios.patch(route(s,{repair:r.id}),t);return a.status===200&&e.reload({only:["repairs"]}),a};export{i as h};

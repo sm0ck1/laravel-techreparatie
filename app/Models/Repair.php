@@ -67,6 +67,13 @@ class Repair extends Model
         );
     }
 
+    protected function dateDiagnostic(): Attribute
+    {
+        return Attribute::make(
+            get: fn($value) => $value ? \Carbon\Carbon::parse($value)->format('d.m.Y') : null,
+        );
+    }
+
     protected function dateOrdered(): Attribute
     {
         return Attribute::make(
