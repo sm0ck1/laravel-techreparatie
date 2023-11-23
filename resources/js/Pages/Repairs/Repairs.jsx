@@ -6,18 +6,33 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 
 import RepairsLayout from "@/Pages/Repairs/RepairsLayout.jsx";
-import {Badge, Box, Button, ButtonGroup, Table, TableBody, TextField,} from "@mui/material";
+import {
+    Badge,
+    Box,
+    Button,
+    ButtonGroup,
+    Divider,
+    IconButton,
+    InputBase,
+    Table,
+    TableBody,
+} from "@mui/material";
 import Row from "@/Pages/Repairs/Components/Row.jsx";
 import ModalEdit from "@/Pages/Repairs/Components/ModalEdit.jsx";
 import ModalAdd from "@/Pages/Repairs/Components/ModalCreate.jsx";
 import {repairStore} from "@/shared/store/repairStore.js";
-import {Link} from "@inertiajs/react";
-// import SearchIcon from '@mui/icons-material/Search';
+import {Link, router} from "@inertiajs/react";
+import {Pagination} from '@mui/material'
+import queryString from 'query-string';
+import Paper from "@mui/material/Paper";
+import SearchIcon from '@mui/icons-material/Search';
+import CloseIcon from '@mui/icons-material/Close';
+
 
 const Repairs = ({repairs, employees, groupWhereOrdered, groupDevices}) => {
     const [openCreateModal, setOpenCreateModal] = React.useState(false);
     const [open, setOpen] = React.useState(false);
-
+    const [search, setSearch] = React.useState('');
     const [links, setLinks] = React.useState([
         {name: 'All', url: ''},
         {name: 'Not called', url: '?filter[is_called]=0&filter[is_picked_up]=0&filter[is_fixed]=1'},
@@ -25,6 +40,13 @@ const Repairs = ({repairs, employees, groupWhereOrdered, groupDevices}) => {
         {name: 'Awaits order', url: '?filter[is_fixed]=0&filter[is_ordered_component]=1&filter[is_picked_up]=0'},
         {name: 'Not taken yet', url: '?filter[is_picked_up]=0&filter[is_fixed]=1'},
     ]);
+
+    useEffect(() => {
+        const parsed = queryString.parse(location.search);
+        if (parsed.search) {
+            setSearch(parsed.search);
+        }
+    }, [location.search]);
 
     useEffect(() => {
         repairStore.employees = employees;
@@ -44,9 +66,15 @@ const Repairs = ({repairs, employees, groupWhereOrdered, groupDevices}) => {
             });
         });
     }, []);
-
     const handleCloseCreateModal = () => {
         setOpenCreateModal(false);
+    };
+
+    const handleChangePage = (event, value) => {
+        const parsed = queryString.parse(location.search);
+        parsed.page = value;
+        const stringified = queryString.stringify(parsed);
+        router.get('/repairs' + '?' + stringified);
     };
 
     const StyledButton = {
@@ -68,7 +96,11 @@ const Repairs = ({repairs, employees, groupWhereOrdered, groupDevices}) => {
                 mb: 2,
             }}>
                 <Box>
-                    <Button variant='contained' color='success' onClick={() => setOpenCreateModal(true)}>
+                    <Button
+                        sx={{
+                            p: '10px'
+                        }}
+                        variant='contained' color='success' onClick={() => setOpenCreateModal(true)}>
                         New repair
                     </Button>
                 </Box>
@@ -77,14 +109,36 @@ const Repairs = ({repairs, employees, groupWhereOrdered, groupDevices}) => {
                     flexDirection: 'row',
                     gap: 2,
                 }}>
-                    {/*<Box>*/}
-                    {/*    <TextField*/}
-                    {/*        sx={{maxWidth: '300px', width: '100%', flexGrow: 1}}*/}
-                    {/*        size='small'*/}
-                    {/*        id="search-field"*/}
-                    {/*        label="Search"*/}
-                    {/*    />*/}
-                    {/*</Box>*/}
+                    <Paper
+                        component="form"
+                        sx={{p: '2px 4px', display: 'flex', alignItems: 'center', width: 400}}
+                    >
+                        <InputBase
+                            sx={{ml: 1, flex: 1}}
+                            placeholder="Search customer, invoice and etc"
+                            inputProps={{'aria-label': 'Search customer, invoice and etc'}}
+                            value={search || ''}
+                            onChange={(e) => setSearch(e.target.value)}
+                        />
+                        <IconButton type="button" sx={{p: '10px'}} aria-label="search"
+                                    onClick={() => router.get('/repairs?search=' + search)}
+                        >
+                            <SearchIcon/>
+                        </IconButton>
+                        {search && (
+                            <>
+                                <Divider sx={{height: 28, m: 0.5}} orientation="vertical"/>
+                                <IconButton color="primary" sx={{p: '10px'}} aria-label="close"
+                                            onClick={() => {
+                                                setSearch('');
+                                                router.get('/repairs');
+                                            }}
+                                >
+                                    <CloseIcon/>
+                                </IconButton>
+                            </>
+                        )}
+                    </Paper>
                     <ButtonGroup variant="contained" aria-label="outlined primary button group">
                         {links.map((link, i) => {
                             return (
@@ -122,6 +176,21 @@ const Repairs = ({repairs, employees, groupWhereOrdered, groupDevices}) => {
                             </TableBody>
                         </Table>
                     </TableContainer>
+                    {repairs.last_page > 1 && (
+                        <Box
+                            sx={{
+                                display: 'flex',
+                                justifyContent: 'center',
+                                alignItems: 'center',
+                                gap: 2,
+                                mt: 2,
+                            }}
+                        >
+                            <Pagination count={repairs.last_page} page={repairs.current_page}
+                                        onChange={handleChangePage}
+                                        variant="outlined" shape="rounded"/>
+                        </Box>
+                    )}
                 </>
             )}
             {repairs.data.length === 0 && (

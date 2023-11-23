@@ -19,7 +19,16 @@ class RepairController extends Controller
     public function index()
     {
 
-        $repairs = QueryBuilder::for(Repair::class)->with(['user', 'whoOrdered'])->allowedFilters(['is_fixed', 'is_ordered_component', 'is_picked_up', 'is_called'])->orderBy('created_at', 'DESC')->paginate();
+        $repairs = QueryBuilder::for(Repair::class)->with(['user', 'whoOrdered'])->allowedFilters(['is_fixed', 'is_ordered_component', 'is_picked_up', 'is_called'])->orderBy('created_at', 'DESC');
+        if(request()->has('search')){
+            $search = request()->query('search');
+            $repairs->where('customer_name', 'LIKE', "%{$search}%");
+            $repairs->orWhere('customer_phone', 'LIKE', "%{$search}%");
+            $repairs->orWhere('invoice', 'LIKE', "%{$search}%");
+            $repairs->orWhere('id', 'LIKE', "%{$search}%");
+            $repairs->orWhere('problem_description', 'LIKE', "%{$search}%");
+        }
+        $repairs = $repairs->paginate(20);
         $employees = User::where('role', 'employee')->where('access', true)->get();
         $groupWhereOrdered = Repair::whereNotNull('where_ordered')->groupBy('where_ordered')->get(['where_ordered']);
         $groupDevices = Repair::whereNotNull('device')->groupBy('device')->get(['device']);
