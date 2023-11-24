@@ -26,7 +26,7 @@ const ModalCreate = ({open, handleClose}) => {
         cost: "",
         invoice: "",
         note: "",
-        user_id: 2,
+        user_id: 0,
     })
 
     const [disable, setDisable] = React.useState(false);
@@ -79,26 +79,6 @@ const ModalCreate = ({open, handleClose}) => {
                 <InputText label='Problem description' form={form} name='problem_description'
                            props={{fullWidth: true}}/>
             </BlockDivider>
-
-            {/*{employees.length &&*/}
-            {/*    <BlockDivider title='Employeer'>*/}
-            {/*        <FormControl fullWidth>*/}
-            {/*            <InputLabel id="demo-simple-select-label">Employee</InputLabel>*/}
-            {/*            <Select*/}
-            {/*                labelId="demo-simple-select-label"*/}
-            {/*                id="demo-simple-select"*/}
-            {/*                value={form.data['user_id'] || ''}*/}
-            {/*                label="Employee"*/}
-            {/*                onChange={e => form.setData('user_id', e.target.value)}*/}
-            {/*            >*/}
-            {/*                {employees.map((item, index) => (*/}
-            {/*                        <MenuItem key={item.id} value={item.id}>{item.name}</MenuItem>*/}
-            {/*                    )*/}
-            {/*                )}*/}
-            {/*            </Select>*/}
-            {/*        </FormControl>*/}
-            {/*    </BlockDivider>*/}
-            {/*}*/}
             <BlockDivider title='Note'>
                 <TextField fullWidth multiline label="Note" variant="standard"/>
             </BlockDivider>
