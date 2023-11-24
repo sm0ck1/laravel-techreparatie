@@ -18,6 +18,7 @@ const BlockCalled = ({repair}) => {
     const {mutate, isPending, isSuccess} = useMutationCalled();
 
     useEffect(() => {
+        console.log('!!repair[field]',!!repair[field])
         setSelected(!!repair[field]);
     }, []);
 

@@ -4,9 +4,7 @@ import * as React from "react";
 
 const BlockInfoOrdered = ({repair}) => {
 
-    if (!repair.is_ordered_component) {
-        return null;
-    }
+    if (!repair.is_ordered_component) return <></>;
     return (
         <BlockInfoLayout title='Ordered' date={repair.date_ordered}>
             <TextField

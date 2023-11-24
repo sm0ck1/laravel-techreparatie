@@ -3,7 +3,7 @@ import BlockInfoLayout from "@/Pages/Repairs/BlockInfo/Components/BlockInfoLayou
 import * as React from "react";
 
 const BlockInfoFixed = ({repair}) => {
-    if (!repair.is_fixed) return null;
+    if (!repair.is_fixed) return <></>;
     return (
         <BlockInfoLayout title='Fixed' date={repair.date_fixed}>
             <TextField
