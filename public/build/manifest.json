@@ -1,167 +1,167 @@
 {
-  "_Autocomplete-69abba2e.js": {
-    "file": "assets/Autocomplete-69abba2e.js",
+  "_Autocomplete-e729db2b.js": {
+    "file": "assets/Autocomplete-e729db2b.js",
     "imports": [
-      "_createTheme-45223b27.js",
+      "_createTheme-e443a688.js",
       "resources/js/app.jsx",
-      "_TextField-cb3f02db.js",
-      "_createSvgIcon-7e5898f0.js",
-      "_styled-ca6570b2.js",
-      "_IconButton-bb73b0e4.js",
-      "_Popper-5213f63f.js",
-      "_Modal-d3c2b610.js",
-      "_useId-436e340f.js",
-      "_TransitionGroupContext-91a870c1.js",
-      "_ButtonBase-565ed3e8.js"
+      "_TextField-94f03ebe.js",
+      "_createSvgIcon-74e13a21.js",
+      "_styled-6ddd3ae9.js",
+      "_IconButton-86d070ce.js",
+      "_Popper-2c55403e.js",
+      "_Modal-012e7dea.js",
+      "_useId-95af0284.js",
+      "_TransitionGroupContext-bf46694f.js",
+      "_ButtonBase-bd429d2a.js"
     ]
   },
-  "_BlockInfoLayout-618789e0.js": {
-    "file": "assets/BlockInfoLayout-618789e0.js",
+  "_BlockInfoLayout-e5800e77.js": {
+    "file": "assets/BlockInfoLayout-e5800e77.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Box-231cdc23.js",
-      "_Typography-b7819ec0.js",
-      "_createTheme-45223b27.js",
-      "_styled-ca6570b2.js",
-      "_dividerClasses-fd7645b7.js"
+      "_Box-132a8830.js",
+      "_Typography-58006bdd.js",
+      "_createTheme-e443a688.js",
+      "_styled-6ddd3ae9.js",
+      "_dividerClasses-46d6c7a3.js"
     ],
     "isDynamicEntry": true
   },
-  "_Box-231cdc23.js": {
-    "file": "assets/Box-231cdc23.js",
+  "_Box-132a8830.js": {
+    "file": "assets/Box-132a8830.js",
     "imports": [
-      "_createTheme-45223b27.js",
+      "_createTheme-e443a688.js",
       "resources/js/app.jsx",
-      "_extendSxProp-7b2aa809.js"
+      "_extendSxProp-5b301ce9.js"
     ]
   },
-  "_Button-bfc4daa2.js": {
-    "file": "assets/Button-bfc4daa2.js",
+  "_Button-69efd48b.js": {
+    "file": "assets/Button-69efd48b.js",
     "imports": [
-      "_createTheme-45223b27.js",
+      "_createTheme-e443a688.js",
       "resources/js/app.jsx",
-      "_styled-ca6570b2.js",
-      "_ButtonBase-565ed3e8.js"
+      "_styled-6ddd3ae9.js",
+      "_ButtonBase-bd429d2a.js"
     ]
   },
-  "_ButtonBase-565ed3e8.js": {
-    "file": "assets/ButtonBase-565ed3e8.js",
+  "_ButtonBase-bd429d2a.js": {
+    "file": "assets/ButtonBase-bd429d2a.js",
     "imports": [
-      "_createTheme-45223b27.js",
+      "_createTheme-e443a688.js",
       "resources/js/app.jsx",
-      "_styled-ca6570b2.js",
-      "_TransitionGroupContext-91a870c1.js"
+      "_styled-6ddd3ae9.js",
+      "_TransitionGroupContext-bf46694f.js"
     ]
   },
-  "_Check-477cc82e.js": {
-    "file": "assets/Check-477cc82e.js",
+  "_Check-798d69d4.js": {
+    "file": "assets/Check-798d69d4.js",
     "imports": [
-      "_createSvgIcon-e576eed7.js",
+      "_createSvgIcon-5ec9d790.js",
       "resources/js/app.jsx"
     ]
   },
-  "_Container-b1758a4a.js": {
-    "file": "assets/Container-b1758a4a.js",
+  "_Container-acfea48f.js": {
+    "file": "assets/Container-acfea48f.js",
     "imports": [
-      "_styled-ca6570b2.js",
-      "_createTheme-45223b27.js",
+      "_styled-6ddd3ae9.js",
+      "_createTheme-e443a688.js",
       "resources/js/app.jsx",
-      "_styled-5cf96515.js"
+      "_styled-6f8de2aa.js"
     ]
   },
-  "_GuestLayout-130b1989.js": {
-    "file": "assets/GuestLayout-130b1989.js",
+  "_GuestLayout-247e90d5.js": {
+    "file": "assets/GuestLayout-247e90d5.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Box-231cdc23.js"
+      "_Box-132a8830.js"
     ]
   },
-  "_IconButton-bb73b0e4.js": {
-    "file": "assets/IconButton-bb73b0e4.js",
+  "_IconButton-86d070ce.js": {
+    "file": "assets/IconButton-86d070ce.js",
     "imports": [
-      "_createTheme-45223b27.js",
+      "_createTheme-e443a688.js",
       "resources/js/app.jsx",
-      "_styled-ca6570b2.js",
-      "_ButtonBase-565ed3e8.js"
+      "_styled-6ddd3ae9.js",
+      "_ButtonBase-bd429d2a.js"
     ]
   },
-  "_LoadingButton-142f046c.js": {
-    "file": "assets/LoadingButton-142f046c.js",
+  "_LoadingButton-f9168bcf.js": {
+    "file": "assets/LoadingButton-f9168bcf.js",
     "imports": [
-      "_createTheme-45223b27.js",
+      "_createTheme-e443a688.js",
       "resources/js/app.jsx",
-      "_styled-ca6570b2.js",
-      "_Button-bfc4daa2.js",
-      "_useId-436e340f.js",
-      "_TransitionGroupContext-91a870c1.js"
+      "_styled-6ddd3ae9.js",
+      "_Button-69efd48b.js",
+      "_useId-95af0284.js",
+      "_TransitionGroupContext-bf46694f.js"
     ]
   },
-  "_LocalShipping-94e7d394.js": {
-    "file": "assets/LocalShipping-94e7d394.js",
+  "_LocalShipping-d2d6695e.js": {
+    "file": "assets/LocalShipping-d2d6695e.js",
     "imports": [
-      "_createSvgIcon-e576eed7.js",
+      "_createSvgIcon-5ec9d790.js",
       "resources/js/app.jsx"
     ]
   },
-  "_Menu-1d183c87.js": {
-    "file": "assets/Menu-1d183c87.js",
+  "_Menu-f2ff0f34.js": {
+    "file": "assets/Menu-f2ff0f34.js",
     "imports": [
-      "_createTheme-45223b27.js",
+      "_createTheme-e443a688.js",
       "resources/js/app.jsx",
-      "_styled-ca6570b2.js",
-      "_Modal-d3c2b610.js",
-      "_TransitionGroupContext-91a870c1.js",
-      "_useId-436e340f.js",
-      "_createSvgIcon-7e5898f0.js"
+      "_styled-6ddd3ae9.js",
+      "_Modal-012e7dea.js",
+      "_TransitionGroupContext-bf46694f.js",
+      "_useId-95af0284.js",
+      "_createSvgIcon-74e13a21.js"
     ]
   },
-  "_MenuItem-2c42dd32.js": {
-    "file": "assets/MenuItem-2c42dd32.js",
+  "_MenuItem-46852476.js": {
+    "file": "assets/MenuItem-46852476.js",
     "imports": [
-      "_createTheme-45223b27.js",
+      "_createTheme-e443a688.js",
       "resources/js/app.jsx",
-      "_styled-ca6570b2.js",
-      "_Menu-1d183c87.js",
-      "_ButtonBase-565ed3e8.js",
-      "_dividerClasses-fd7645b7.js",
-      "_TransitionGroupContext-91a870c1.js"
+      "_styled-6ddd3ae9.js",
+      "_Menu-f2ff0f34.js",
+      "_ButtonBase-bd429d2a.js",
+      "_dividerClasses-46d6c7a3.js",
+      "_TransitionGroupContext-bf46694f.js"
     ]
   },
-  "_Modal-2681e1c0.js": {
-    "file": "assets/Modal-2681e1c0.js",
+  "_Modal-012e7dea.js": {
+    "file": "assets/Modal-012e7dea.js",
     "imports": [
+      "_createTheme-e443a688.js",
       "resources/js/app.jsx",
-      "_Modal-d3c2b610.js",
-      "_Container-b1758a4a.js",
-      "_Typography-b7819ec0.js"
+      "_styled-6ddd3ae9.js",
+      "_TransitionGroupContext-bf46694f.js",
+      "_useId-95af0284.js"
     ]
   },
-  "_Modal-d3c2b610.js": {
-    "file": "assets/Modal-d3c2b610.js",
+  "_Modal-e122baf5.js": {
+    "file": "assets/Modal-e122baf5.js",
     "imports": [
-      "_createTheme-45223b27.js",
       "resources/js/app.jsx",
-      "_styled-ca6570b2.js",
-      "_TransitionGroupContext-91a870c1.js",
-      "_useId-436e340f.js"
+      "_Modal-012e7dea.js",
+      "_Container-acfea48f.js",
+      "_Typography-58006bdd.js"
     ]
   },
-  "_Popper-5213f63f.js": {
-    "file": "assets/Popper-5213f63f.js",
+  "_Popper-2c55403e.js": {
+    "file": "assets/Popper-2c55403e.js",
     "imports": [
-      "_createTheme-45223b27.js",
+      "_createTheme-e443a688.js",
       "resources/js/app.jsx",
-      "_styled-ca6570b2.js",
-      "_useId-436e340f.js",
-      "_Modal-d3c2b610.js",
-      "_TransitionGroupContext-91a870c1.js"
+      "_styled-6ddd3ae9.js",
+      "_useId-95af0284.js",
+      "_Modal-012e7dea.js",
+      "_TransitionGroupContext-bf46694f.js"
     ]
   },
-  "_Row-2e9bd677.js": {
-    "file": "assets/Row-2e9bd677.js",
+  "_Row-0cc8e50b.js": {
+    "file": "assets/Row-0cc8e50b.js",
     "imports": [
       "resources/js/app.jsx",
-      "_createSvgIcon-e576eed7.js",
+      "_createSvgIcon-5ec9d790.js",
       "resources/js/Pages/Repairs/BlockInfo/BlockInfo.jsx",
       "resources/js/Pages/Repairs/BlockFixed/BlockFixed.jsx",
       "resources/js/Pages/Repairs/BlockPickedUp/BlockPickedUp.jsx",
@@ -169,74 +169,74 @@
       "resources/js/Pages/Repairs/BlockCalled/BlockCalled.jsx",
       "_formatDate-844e8021.js",
       "resources/js/Pages/Repairs/BlockDiagnostic/BlockDiagnostic.jsx",
-      "_createTheme-45223b27.js",
-      "_styled-ca6570b2.js",
-      "_IconButton-bb73b0e4.js",
-      "_Box-231cdc23.js",
-      "_Typography-b7819ec0.js",
-      "_Modal-d3c2b610.js",
-      "_TransitionGroupContext-91a870c1.js"
+      "_createTheme-e443a688.js",
+      "_styled-6ddd3ae9.js",
+      "_IconButton-86d070ce.js",
+      "_Box-132a8830.js",
+      "_Typography-58006bdd.js",
+      "_Modal-012e7dea.js",
+      "_TransitionGroupContext-bf46694f.js"
     ],
     "isDynamicEntry": true
   },
-  "_TextField-cb3f02db.js": {
-    "file": "assets/TextField-cb3f02db.js",
+  "_TextField-94f03ebe.js": {
+    "file": "assets/TextField-94f03ebe.js",
     "imports": [
-      "_createTheme-45223b27.js",
+      "_createTheme-e443a688.js",
       "resources/js/app.jsx",
-      "_styled-ca6570b2.js",
-      "_createSvgIcon-7e5898f0.js",
-      "_useId-436e340f.js",
-      "_Menu-1d183c87.js",
-      "_TransitionGroupContext-91a870c1.js",
-      "_Modal-d3c2b610.js"
+      "_styled-6ddd3ae9.js",
+      "_createSvgIcon-74e13a21.js",
+      "_useId-95af0284.js",
+      "_Menu-f2ff0f34.js",
+      "_TransitionGroupContext-bf46694f.js",
+      "_Modal-012e7dea.js"
     ]
   },
-  "_TransitionGroupContext-91a870c1.js": {
-    "file": "assets/TransitionGroupContext-91a870c1.js",
+  "_TransitionGroupContext-bf46694f.js": {
+    "file": "assets/TransitionGroupContext-bf46694f.js",
     "imports": [
       "resources/js/app.jsx",
-      "_createTheme-45223b27.js"
+      "_createTheme-e443a688.js"
     ]
   },
-  "_Typography-b7819ec0.js": {
-    "file": "assets/Typography-b7819ec0.js",
+  "_Typography-58006bdd.js": {
+    "file": "assets/Typography-58006bdd.js",
     "imports": [
-      "_createTheme-45223b27.js",
+      "_createTheme-e443a688.js",
       "resources/js/app.jsx",
-      "_styled-ca6570b2.js",
-      "_extendSxProp-7b2aa809.js"
+      "_styled-6ddd3ae9.js",
+      "_extendSxProp-5b301ce9.js"
     ]
   },
-  "_createSvgIcon-7e5898f0.js": {
-    "file": "assets/createSvgIcon-7e5898f0.js",
-    "imports": [
-      "resources/js/app.jsx",
-      "_createTheme-45223b27.js",
-      "_styled-ca6570b2.js"
-    ]
-  },
-  "_createSvgIcon-e576eed7.js": {
-    "file": "assets/createSvgIcon-e576eed7.js",
+  "_createSvgIcon-5ec9d790.js": {
+    "file": "assets/createSvgIcon-5ec9d790.js",
     "imports": [
       "resources/js/app.jsx",
-      "_createSvgIcon-7e5898f0.js",
-      "_createTheme-45223b27.js",
-      "_useId-436e340f.js",
-      "_TransitionGroupContext-91a870c1.js",
-      "_ButtonBase-565ed3e8.js"
+      "_createSvgIcon-74e13a21.js",
+      "_createTheme-e443a688.js",
+      "_useId-95af0284.js",
+      "_TransitionGroupContext-bf46694f.js",
+      "_ButtonBase-bd429d2a.js"
     ]
   },
-  "_createTheme-45223b27.js": {
-    "file": "assets/createTheme-45223b27.js",
+  "_createSvgIcon-74e13a21.js": {
+    "file": "assets/createSvgIcon-74e13a21.js",
+    "imports": [
+      "resources/js/app.jsx",
+      "_createTheme-e443a688.js",
+      "_styled-6ddd3ae9.js"
+    ]
+  },
+  "_createTheme-e443a688.js": {
+    "file": "assets/createTheme-e443a688.js",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
-  "_dividerClasses-fd7645b7.js": {
-    "file": "assets/dividerClasses-fd7645b7.js",
+  "_dividerClasses-46d6c7a3.js": {
+    "file": "assets/dividerClasses-46d6c7a3.js",
     "imports": [
-      "_styled-ca6570b2.js"
+      "_styled-6ddd3ae9.js"
     ]
   },
   "_editStore-d065645d.js": {
@@ -245,17 +245,17 @@
       "_vanilla-8854675d.js"
     ]
   },
-  "_extendSxProp-7b2aa809.js": {
-    "file": "assets/extendSxProp-7b2aa809.js",
+  "_extendSxProp-5b301ce9.js": {
+    "file": "assets/extendSxProp-5b301ce9.js",
     "imports": [
-      "_createTheme-45223b27.js"
+      "_createTheme-e443a688.js"
     ]
   },
   "_formatDate-844e8021.js": {
     "file": "assets/formatDate-844e8021.js"
   },
-  "_repairStore-f2cf11a2.js": {
-    "file": "assets/repairStore-f2cf11a2.js",
+  "_repairStore-b76ed4db.js": {
+    "file": "assets/repairStore-b76ed4db.js",
     "imports": [
       "resources/js/app.jsx",
       "_vanilla-8854675d.js"
@@ -264,26 +264,26 @@
   "_snackBarStore-8ecb859e.js": {
     "file": "assets/snackBarStore-8ecb859e.js"
   },
-  "_styled-5cf96515.js": {
-    "file": "assets/styled-5cf96515.js",
+  "_styled-6ddd3ae9.js": {
+    "file": "assets/styled-6ddd3ae9.js",
     "imports": [
-      "_styled-ca6570b2.js"
+      "_createTheme-e443a688.js"
     ]
   },
-  "_styled-ca6570b2.js": {
-    "file": "assets/styled-ca6570b2.js",
+  "_styled-6f8de2aa.js": {
+    "file": "assets/styled-6f8de2aa.js",
     "imports": [
-      "_createTheme-45223b27.js"
+      "_styled-6ddd3ae9.js"
     ]
   },
-  "_useId-436e340f.js": {
-    "file": "assets/useId-436e340f.js",
+  "_useId-95af0284.js": {
+    "file": "assets/useId-95af0284.js",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
-  "_useMutation-b0c41f25.js": {
-    "file": "assets/useMutation-b0c41f25.js",
+  "_useMutation-fe1021bb.js": {
+    "file": "assets/useMutation-fe1021bb.js",
     "imports": [
       "resources/js/app.jsx"
     ]
@@ -292,112 +292,112 @@
     "file": "assets/vanilla-8854675d.js"
   },
   "resources/js/Pages/Auth/ConfirmPassword.jsx": {
-    "file": "assets/ConfirmPassword-d4c1e9cf.js",
+    "file": "assets/ConfirmPassword-6df43341.js",
     "imports": [
       "resources/js/app.jsx",
-      "_GuestLayout-130b1989.js",
-      "_Box-231cdc23.js",
-      "_createTheme-45223b27.js",
-      "_extendSxProp-7b2aa809.js"
+      "_GuestLayout-247e90d5.js",
+      "_Box-132a8830.js",
+      "_createTheme-e443a688.js",
+      "_extendSxProp-5b301ce9.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Auth/ConfirmPassword.jsx"
   },
   "resources/js/Pages/Auth/ForgotPassword.jsx": {
-    "file": "assets/ForgotPassword-0fc8c4f1.js",
+    "file": "assets/ForgotPassword-4e6ab5d4.js",
     "imports": [
       "resources/js/app.jsx",
-      "_GuestLayout-130b1989.js",
-      "_Box-231cdc23.js",
-      "_createTheme-45223b27.js",
-      "_extendSxProp-7b2aa809.js"
+      "_GuestLayout-247e90d5.js",
+      "_Box-132a8830.js",
+      "_createTheme-e443a688.js",
+      "_extendSxProp-5b301ce9.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Auth/ForgotPassword.jsx"
   },
   "resources/js/Pages/Auth/Login.jsx": {
-    "file": "assets/Login-7c2cf0d0.js",
+    "file": "assets/Login-162d4748.js",
     "imports": [
       "resources/js/app.jsx",
-      "_GuestLayout-130b1989.js",
-      "_Modal-d3c2b610.js",
-      "_Box-231cdc23.js",
-      "_TextField-cb3f02db.js",
-      "_createTheme-45223b27.js",
-      "_styled-ca6570b2.js",
-      "_Typography-b7819ec0.js",
-      "_styled-5cf96515.js",
-      "_extendSxProp-7b2aa809.js",
-      "_ButtonBase-565ed3e8.js",
-      "_createSvgIcon-7e5898f0.js",
-      "_Button-bfc4daa2.js",
-      "_TransitionGroupContext-91a870c1.js",
-      "_useId-436e340f.js",
-      "_Menu-1d183c87.js"
+      "_GuestLayout-247e90d5.js",
+      "_Modal-012e7dea.js",
+      "_Box-132a8830.js",
+      "_TextField-94f03ebe.js",
+      "_createTheme-e443a688.js",
+      "_styled-6ddd3ae9.js",
+      "_Typography-58006bdd.js",
+      "_styled-6f8de2aa.js",
+      "_extendSxProp-5b301ce9.js",
+      "_ButtonBase-bd429d2a.js",
+      "_createSvgIcon-74e13a21.js",
+      "_Button-69efd48b.js",
+      "_TransitionGroupContext-bf46694f.js",
+      "_useId-95af0284.js",
+      "_Menu-f2ff0f34.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Auth/Login.jsx"
   },
   "resources/js/Pages/Auth/Register.jsx": {
-    "file": "assets/Register-38d8eb29.js",
+    "file": "assets/Register-c58223e1.js",
     "imports": [
       "resources/js/app.jsx",
-      "_GuestLayout-130b1989.js",
-      "_Modal-d3c2b610.js",
-      "_TextField-cb3f02db.js",
-      "_Box-231cdc23.js",
-      "_Button-bfc4daa2.js",
-      "_createTheme-45223b27.js",
-      "_styled-ca6570b2.js",
-      "_TransitionGroupContext-91a870c1.js",
-      "_useId-436e340f.js",
-      "_createSvgIcon-7e5898f0.js",
-      "_Menu-1d183c87.js",
-      "_extendSxProp-7b2aa809.js",
-      "_ButtonBase-565ed3e8.js"
+      "_GuestLayout-247e90d5.js",
+      "_Modal-012e7dea.js",
+      "_TextField-94f03ebe.js",
+      "_Box-132a8830.js",
+      "_Button-69efd48b.js",
+      "_createTheme-e443a688.js",
+      "_styled-6ddd3ae9.js",
+      "_TransitionGroupContext-bf46694f.js",
+      "_useId-95af0284.js",
+      "_createSvgIcon-74e13a21.js",
+      "_Menu-f2ff0f34.js",
+      "_extendSxProp-5b301ce9.js",
+      "_ButtonBase-bd429d2a.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Auth/Register.jsx"
   },
   "resources/js/Pages/Auth/ResetPassword.jsx": {
-    "file": "assets/ResetPassword-1e99b6a4.js",
+    "file": "assets/ResetPassword-286edc06.js",
     "imports": [
       "resources/js/app.jsx",
-      "_GuestLayout-130b1989.js",
-      "_Box-231cdc23.js",
-      "_createTheme-45223b27.js",
-      "_extendSxProp-7b2aa809.js"
+      "_GuestLayout-247e90d5.js",
+      "_Box-132a8830.js",
+      "_createTheme-e443a688.js",
+      "_extendSxProp-5b301ce9.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Auth/ResetPassword.jsx"
   },
   "resources/js/Pages/Auth/VerifyEmail.jsx": {
-    "file": "assets/VerifyEmail-52ffe871.js",
+    "file": "assets/VerifyEmail-7315334f.js",
     "imports": [
       "resources/js/app.jsx",
-      "_GuestLayout-130b1989.js",
-      "_Box-231cdc23.js",
-      "_createTheme-45223b27.js",
-      "_extendSxProp-7b2aa809.js"
+      "_GuestLayout-247e90d5.js",
+      "_Box-132a8830.js",
+      "_createTheme-e443a688.js",
+      "_extendSxProp-5b301ce9.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Auth/VerifyEmail.jsx"
   },
   "resources/js/Pages/Components/BlockDivider.jsx": {
-    "file": "assets/BlockDivider-fe4ff1b2.js",
+    "file": "assets/BlockDivider-518e2780.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Box-231cdc23.js",
-      "_Typography-b7819ec0.js",
-      "_createTheme-45223b27.js",
-      "_extendSxProp-7b2aa809.js",
-      "_styled-ca6570b2.js"
+      "_Box-132a8830.js",
+      "_Typography-58006bdd.js",
+      "_createTheme-e443a688.js",
+      "_extendSxProp-5b301ce9.js",
+      "_styled-6ddd3ae9.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Components/BlockDivider.jsx"
   },
   "resources/js/Pages/Components/HeaderMenu.jsx": {
-    "file": "assets/HeaderMenu-587936f3.js",
+    "file": "assets/HeaderMenu-89c245f3.js",
     "imports": [
       "resources/js/app.jsx"
     ],
@@ -405,591 +405,591 @@
     "src": "resources/js/Pages/Components/HeaderMenu.jsx"
   },
   "resources/js/Pages/Components/InputText.jsx": {
-    "file": "assets/InputText-230862d7.js",
+    "file": "assets/InputText-0041d78d.js",
     "imports": [
       "resources/js/app.jsx",
-      "_TextField-cb3f02db.js",
-      "_createTheme-45223b27.js",
-      "_styled-ca6570b2.js",
-      "_createSvgIcon-7e5898f0.js",
-      "_useId-436e340f.js",
-      "_Menu-1d183c87.js",
-      "_Modal-d3c2b610.js",
-      "_TransitionGroupContext-91a870c1.js"
+      "_TextField-94f03ebe.js",
+      "_createTheme-e443a688.js",
+      "_styled-6ddd3ae9.js",
+      "_createSvgIcon-74e13a21.js",
+      "_useId-95af0284.js",
+      "_Menu-f2ff0f34.js",
+      "_Modal-012e7dea.js",
+      "_TransitionGroupContext-bf46694f.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Components/InputText.jsx"
   },
   "resources/js/Pages/Dashboard/Dashboard.jsx": {
-    "file": "assets/Dashboard-ccaa04d6.js",
+    "file": "assets/Dashboard-7c9d9990.js",
     "imports": [
       "resources/js/app.jsx",
       "resources/js/Pages/DashboardLayout.jsx",
-      "_createSvgIcon-e576eed7.js",
-      "_createSvgIcon-7e5898f0.js",
-      "_createTheme-45223b27.js",
-      "_styled-ca6570b2.js",
-      "_useId-436e340f.js",
-      "_TransitionGroupContext-91a870c1.js",
-      "_ButtonBase-565ed3e8.js",
-      "_Modal-d3c2b610.js",
-      "_Container-b1758a4a.js",
-      "_styled-5cf96515.js",
-      "_Box-231cdc23.js",
-      "_extendSxProp-7b2aa809.js",
-      "_IconButton-bb73b0e4.js",
-      "_Menu-1d183c87.js",
-      "_MenuItem-2c42dd32.js",
-      "_dividerClasses-fd7645b7.js",
-      "_Typography-b7819ec0.js",
-      "_Button-bfc4daa2.js",
-      "_Popper-5213f63f.js"
+      "_createSvgIcon-5ec9d790.js",
+      "_createSvgIcon-74e13a21.js",
+      "_createTheme-e443a688.js",
+      "_styled-6ddd3ae9.js",
+      "_useId-95af0284.js",
+      "_TransitionGroupContext-bf46694f.js",
+      "_ButtonBase-bd429d2a.js",
+      "_Modal-012e7dea.js",
+      "_Container-acfea48f.js",
+      "_styled-6f8de2aa.js",
+      "_Box-132a8830.js",
+      "_extendSxProp-5b301ce9.js",
+      "_IconButton-86d070ce.js",
+      "_Menu-f2ff0f34.js",
+      "_MenuItem-46852476.js",
+      "_dividerClasses-46d6c7a3.js",
+      "_Typography-58006bdd.js",
+      "_Button-69efd48b.js",
+      "_Popper-2c55403e.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Dashboard/Dashboard.jsx"
   },
   "resources/js/Pages/DashboardLayout.jsx": {
-    "file": "assets/DashboardLayout-5206f3bb.js",
+    "file": "assets/DashboardLayout-df46601a.js",
     "imports": [
       "resources/js/app.jsx",
-      "_createSvgIcon-e576eed7.js",
-      "_createTheme-45223b27.js",
-      "_styled-ca6570b2.js",
-      "_Modal-d3c2b610.js",
-      "_Container-b1758a4a.js",
-      "_Box-231cdc23.js",
-      "_IconButton-bb73b0e4.js",
-      "_Menu-1d183c87.js",
-      "_MenuItem-2c42dd32.js",
-      "_Typography-b7819ec0.js",
-      "_Button-bfc4daa2.js",
-      "_Popper-5213f63f.js",
-      "_createSvgIcon-7e5898f0.js",
-      "_useId-436e340f.js",
-      "_TransitionGroupContext-91a870c1.js",
-      "_ButtonBase-565ed3e8.js",
-      "_styled-5cf96515.js",
-      "_extendSxProp-7b2aa809.js",
-      "_dividerClasses-fd7645b7.js"
+      "_createSvgIcon-5ec9d790.js",
+      "_createTheme-e443a688.js",
+      "_styled-6ddd3ae9.js",
+      "_Modal-012e7dea.js",
+      "_Container-acfea48f.js",
+      "_Box-132a8830.js",
+      "_IconButton-86d070ce.js",
+      "_Menu-f2ff0f34.js",
+      "_MenuItem-46852476.js",
+      "_Typography-58006bdd.js",
+      "_Button-69efd48b.js",
+      "_Popper-2c55403e.js",
+      "_createSvgIcon-74e13a21.js",
+      "_useId-95af0284.js",
+      "_TransitionGroupContext-bf46694f.js",
+      "_ButtonBase-bd429d2a.js",
+      "_styled-6f8de2aa.js",
+      "_extendSxProp-5b301ce9.js",
+      "_dividerClasses-46d6c7a3.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/DashboardLayout.jsx"
   },
   "resources/js/Pages/Profile/Edit.jsx": {
-    "file": "assets/Edit-d55c9d62.js",
+    "file": "assets/Edit-df56f148.js",
     "imports": [
       "resources/js/app.jsx",
       "resources/js/Pages/Profile/Partials/UpdatePasswordForm.jsx",
       "resources/js/Pages/Profile/Partials/UpdateProfileInformationForm.jsx",
       "resources/js/Pages/DashboardLayout.jsx",
-      "_Container-b1758a4a.js",
+      "_Container-acfea48f.js",
       "resources/js/Pages/Components/BlockDivider.jsx",
-      "_Box-231cdc23.js",
-      "_createTheme-45223b27.js",
-      "_extendSxProp-7b2aa809.js",
-      "_Typography-b7819ec0.js",
-      "_styled-ca6570b2.js",
+      "_Box-132a8830.js",
+      "_createTheme-e443a688.js",
+      "_extendSxProp-5b301ce9.js",
+      "_Typography-58006bdd.js",
+      "_styled-6ddd3ae9.js",
       "resources/js/Pages/Components/InputText.jsx",
-      "_TextField-cb3f02db.js",
-      "_createSvgIcon-7e5898f0.js",
-      "_useId-436e340f.js",
-      "_Menu-1d183c87.js",
-      "_Modal-d3c2b610.js",
-      "_TransitionGroupContext-91a870c1.js",
+      "_TextField-94f03ebe.js",
+      "_createSvgIcon-74e13a21.js",
+      "_useId-95af0284.js",
+      "_Menu-f2ff0f34.js",
+      "_Modal-012e7dea.js",
+      "_TransitionGroupContext-bf46694f.js",
       "_snackBarStore-8ecb859e.js",
-      "_LoadingButton-142f046c.js",
-      "_Button-bfc4daa2.js",
-      "_ButtonBase-565ed3e8.js",
-      "_createSvgIcon-e576eed7.js",
-      "_IconButton-bb73b0e4.js",
-      "_MenuItem-2c42dd32.js",
-      "_dividerClasses-fd7645b7.js",
-      "_Popper-5213f63f.js",
-      "_styled-5cf96515.js"
+      "_LoadingButton-f9168bcf.js",
+      "_Button-69efd48b.js",
+      "_ButtonBase-bd429d2a.js",
+      "_createSvgIcon-5ec9d790.js",
+      "_IconButton-86d070ce.js",
+      "_MenuItem-46852476.js",
+      "_dividerClasses-46d6c7a3.js",
+      "_Popper-2c55403e.js",
+      "_styled-6f8de2aa.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Profile/Edit.jsx"
   },
   "resources/js/Pages/Profile/Partials/UpdatePasswordForm.jsx": {
-    "file": "assets/UpdatePasswordForm-ae4cde6e.js",
+    "file": "assets/UpdatePasswordForm-f020367e.js",
     "imports": [
       "resources/js/app.jsx",
       "resources/js/Pages/Components/BlockDivider.jsx",
       "resources/js/Pages/Components/InputText.jsx",
       "_snackBarStore-8ecb859e.js",
-      "_LoadingButton-142f046c.js",
-      "_Box-231cdc23.js",
-      "_createTheme-45223b27.js",
-      "_extendSxProp-7b2aa809.js",
-      "_Typography-b7819ec0.js",
-      "_styled-ca6570b2.js",
-      "_TextField-cb3f02db.js",
-      "_createSvgIcon-7e5898f0.js",
-      "_useId-436e340f.js",
-      "_Menu-1d183c87.js",
-      "_Modal-d3c2b610.js",
-      "_TransitionGroupContext-91a870c1.js",
-      "_Button-bfc4daa2.js",
-      "_ButtonBase-565ed3e8.js"
+      "_LoadingButton-f9168bcf.js",
+      "_Box-132a8830.js",
+      "_createTheme-e443a688.js",
+      "_extendSxProp-5b301ce9.js",
+      "_Typography-58006bdd.js",
+      "_styled-6ddd3ae9.js",
+      "_TextField-94f03ebe.js",
+      "_createSvgIcon-74e13a21.js",
+      "_useId-95af0284.js",
+      "_Menu-f2ff0f34.js",
+      "_Modal-012e7dea.js",
+      "_TransitionGroupContext-bf46694f.js",
+      "_Button-69efd48b.js",
+      "_ButtonBase-bd429d2a.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Profile/Partials/UpdatePasswordForm.jsx"
   },
   "resources/js/Pages/Profile/Partials/UpdateProfileInformationForm.jsx": {
-    "file": "assets/UpdateProfileInformationForm-76a5b81c.js",
+    "file": "assets/UpdateProfileInformationForm-1c35b74f.js",
     "imports": [
       "resources/js/app.jsx",
       "resources/js/Pages/Components/BlockDivider.jsx",
       "resources/js/Pages/Components/InputText.jsx",
       "_snackBarStore-8ecb859e.js",
-      "_LoadingButton-142f046c.js",
-      "_Box-231cdc23.js",
-      "_createTheme-45223b27.js",
-      "_extendSxProp-7b2aa809.js",
-      "_Typography-b7819ec0.js",
-      "_styled-ca6570b2.js",
-      "_TextField-cb3f02db.js",
-      "_createSvgIcon-7e5898f0.js",
-      "_useId-436e340f.js",
-      "_Menu-1d183c87.js",
-      "_Modal-d3c2b610.js",
-      "_TransitionGroupContext-91a870c1.js",
-      "_Button-bfc4daa2.js",
-      "_ButtonBase-565ed3e8.js"
+      "_LoadingButton-f9168bcf.js",
+      "_Box-132a8830.js",
+      "_createTheme-e443a688.js",
+      "_extendSxProp-5b301ce9.js",
+      "_Typography-58006bdd.js",
+      "_styled-6ddd3ae9.js",
+      "_TextField-94f03ebe.js",
+      "_createSvgIcon-74e13a21.js",
+      "_useId-95af0284.js",
+      "_Menu-f2ff0f34.js",
+      "_Modal-012e7dea.js",
+      "_TransitionGroupContext-bf46694f.js",
+      "_Button-69efd48b.js",
+      "_ButtonBase-bd429d2a.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Profile/Partials/UpdateProfileInformationForm.jsx"
   },
   "resources/js/Pages/Repairs/BlockCalled/BlockCalled.jsx": {
-    "file": "assets/BlockCalled-76c0891a.js",
+    "file": "assets/BlockCalled-516d8718.js",
     "imports": [
       "resources/js/app.jsx",
       "resources/js/Pages/Repairs/Components/ConfirmDialog.jsx",
-      "_Check-477cc82e.js",
-      "_useMutation-b0c41f25.js",
-      "_LoadingButton-142f046c.js",
-      "_createTheme-45223b27.js",
-      "_styled-ca6570b2.js",
-      "_Modal-d3c2b610.js",
-      "_TransitionGroupContext-91a870c1.js",
-      "_useId-436e340f.js",
-      "_Typography-b7819ec0.js",
-      "_extendSxProp-7b2aa809.js",
-      "_Button-bfc4daa2.js",
-      "_ButtonBase-565ed3e8.js",
-      "_createSvgIcon-e576eed7.js",
-      "_createSvgIcon-7e5898f0.js"
+      "_Check-798d69d4.js",
+      "_useMutation-fe1021bb.js",
+      "_LoadingButton-f9168bcf.js",
+      "_createTheme-e443a688.js",
+      "_styled-6ddd3ae9.js",
+      "_Modal-012e7dea.js",
+      "_TransitionGroupContext-bf46694f.js",
+      "_useId-95af0284.js",
+      "_Typography-58006bdd.js",
+      "_extendSxProp-5b301ce9.js",
+      "_Button-69efd48b.js",
+      "_ButtonBase-bd429d2a.js",
+      "_createSvgIcon-5ec9d790.js",
+      "_createSvgIcon-74e13a21.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Repairs/BlockCalled/BlockCalled.jsx"
   },
   "resources/js/Pages/Repairs/BlockDiagnostic/BlockDiagnostic.jsx": {
-    "file": "assets/BlockDiagnostic-622e6dc4.js",
+    "file": "assets/BlockDiagnostic-fae6884d.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Check-477cc82e.js",
-      "_Modal-2681e1c0.js",
+      "_Check-798d69d4.js",
+      "_Modal-e122baf5.js",
       "resources/js/Pages/Repairs/Components/ConfirmDialog.jsx",
-      "_useMutation-b0c41f25.js",
-      "_Box-231cdc23.js",
-      "_TextField-cb3f02db.js",
-      "_LoadingButton-142f046c.js",
-      "_Button-bfc4daa2.js",
-      "_createSvgIcon-e576eed7.js",
-      "_createSvgIcon-7e5898f0.js",
-      "_createTheme-45223b27.js",
-      "_styled-ca6570b2.js",
-      "_useId-436e340f.js",
-      "_TransitionGroupContext-91a870c1.js",
-      "_ButtonBase-565ed3e8.js",
-      "_Modal-d3c2b610.js",
-      "_Container-b1758a4a.js",
-      "_styled-5cf96515.js",
-      "_Typography-b7819ec0.js",
-      "_extendSxProp-7b2aa809.js",
-      "_Menu-1d183c87.js"
+      "_useMutation-fe1021bb.js",
+      "_Box-132a8830.js",
+      "_TextField-94f03ebe.js",
+      "_LoadingButton-f9168bcf.js",
+      "_Button-69efd48b.js",
+      "_createSvgIcon-5ec9d790.js",
+      "_createSvgIcon-74e13a21.js",
+      "_createTheme-e443a688.js",
+      "_styled-6ddd3ae9.js",
+      "_useId-95af0284.js",
+      "_TransitionGroupContext-bf46694f.js",
+      "_ButtonBase-bd429d2a.js",
+      "_Modal-012e7dea.js",
+      "_Container-acfea48f.js",
+      "_styled-6f8de2aa.js",
+      "_Typography-58006bdd.js",
+      "_extendSxProp-5b301ce9.js",
+      "_Menu-f2ff0f34.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Repairs/BlockDiagnostic/BlockDiagnostic.jsx"
   },
   "resources/js/Pages/Repairs/BlockFixed/BlockFixed.jsx": {
-    "file": "assets/BlockFixed-53222570.js",
+    "file": "assets/BlockFixed-98aba268.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Check-477cc82e.js",
+      "_Check-798d69d4.js",
       "resources/js/Pages/Repairs/Components/ConfirmDialog.jsx",
-      "_Modal-2681e1c0.js",
-      "_repairStore-f2cf11a2.js",
-      "_useMutation-b0c41f25.js",
-      "_Box-231cdc23.js",
-      "_TextField-cb3f02db.js",
-      "_MenuItem-2c42dd32.js",
-      "_LoadingButton-142f046c.js",
-      "_Button-bfc4daa2.js",
-      "_createSvgIcon-e576eed7.js",
-      "_createSvgIcon-7e5898f0.js",
-      "_createTheme-45223b27.js",
-      "_styled-ca6570b2.js",
-      "_useId-436e340f.js",
-      "_TransitionGroupContext-91a870c1.js",
-      "_ButtonBase-565ed3e8.js",
-      "_Modal-d3c2b610.js",
-      "_Typography-b7819ec0.js",
-      "_extendSxProp-7b2aa809.js",
-      "_Container-b1758a4a.js",
-      "_styled-5cf96515.js",
+      "_Modal-e122baf5.js",
+      "_repairStore-b76ed4db.js",
+      "_useMutation-fe1021bb.js",
+      "_Box-132a8830.js",
+      "_TextField-94f03ebe.js",
+      "_MenuItem-46852476.js",
+      "_LoadingButton-f9168bcf.js",
+      "_Button-69efd48b.js",
+      "_createSvgIcon-5ec9d790.js",
+      "_createSvgIcon-74e13a21.js",
+      "_createTheme-e443a688.js",
+      "_styled-6ddd3ae9.js",
+      "_useId-95af0284.js",
+      "_TransitionGroupContext-bf46694f.js",
+      "_ButtonBase-bd429d2a.js",
+      "_Modal-012e7dea.js",
+      "_Typography-58006bdd.js",
+      "_extendSxProp-5b301ce9.js",
+      "_Container-acfea48f.js",
+      "_styled-6f8de2aa.js",
       "_vanilla-8854675d.js",
-      "_Menu-1d183c87.js",
-      "_dividerClasses-fd7645b7.js"
+      "_Menu-f2ff0f34.js",
+      "_dividerClasses-46d6c7a3.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Repairs/BlockFixed/BlockFixed.jsx"
   },
   "resources/js/Pages/Repairs/BlockInfo/BlockInfo.jsx": {
-    "file": "assets/BlockInfo-6c876f32.js",
+    "file": "assets/BlockInfo-fb36d7a6.js",
     "imports": [
       "resources/js/app.jsx",
-      "_createSvgIcon-e576eed7.js",
+      "_createSvgIcon-5ec9d790.js",
       "_editStore-d065645d.js",
       "resources/js/Pages/Repairs/BlockInfo/Components/BlockInfoOrdered.jsx",
       "resources/js/Pages/Repairs/BlockInfo/Components/BlockInfoFixed.jsx",
       "resources/js/Pages/Repairs/BlockInfo/Components/BlockInfoDiagnostic.jsx",
-      "_Box-231cdc23.js",
-      "_IconButton-bb73b0e4.js",
-      "_Typography-b7819ec0.js",
-      "_createSvgIcon-7e5898f0.js",
-      "_createTheme-45223b27.js",
-      "_styled-ca6570b2.js",
-      "_useId-436e340f.js",
-      "_TransitionGroupContext-91a870c1.js",
-      "_ButtonBase-565ed3e8.js",
+      "_Box-132a8830.js",
+      "_IconButton-86d070ce.js",
+      "_Typography-58006bdd.js",
+      "_createSvgIcon-74e13a21.js",
+      "_createTheme-e443a688.js",
+      "_styled-6ddd3ae9.js",
+      "_useId-95af0284.js",
+      "_TransitionGroupContext-bf46694f.js",
+      "_ButtonBase-bd429d2a.js",
       "_vanilla-8854675d.js",
-      "_BlockInfoLayout-618789e0.js",
-      "_dividerClasses-fd7645b7.js",
-      "_TextField-cb3f02db.js",
-      "_Menu-1d183c87.js",
-      "_Modal-d3c2b610.js",
-      "_extendSxProp-7b2aa809.js"
+      "_BlockInfoLayout-e5800e77.js",
+      "_dividerClasses-46d6c7a3.js",
+      "_TextField-94f03ebe.js",
+      "_Menu-f2ff0f34.js",
+      "_Modal-012e7dea.js",
+      "_extendSxProp-5b301ce9.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Repairs/BlockInfo/BlockInfo.jsx"
   },
   "resources/js/Pages/Repairs/BlockInfo/Components/BlockInfoCalled.jsx": {
-    "file": "assets/BlockInfoCalled-82437cfb.js",
+    "file": "assets/BlockInfoCalled-310de1ac.js",
     "imports": [
       "resources/js/app.jsx",
-      "_BlockInfoLayout-618789e0.js",
-      "_Box-231cdc23.js",
-      "_createTheme-45223b27.js",
-      "_extendSxProp-7b2aa809.js",
-      "_Typography-b7819ec0.js",
-      "_styled-ca6570b2.js",
-      "_dividerClasses-fd7645b7.js"
+      "_BlockInfoLayout-e5800e77.js",
+      "_Box-132a8830.js",
+      "_createTheme-e443a688.js",
+      "_extendSxProp-5b301ce9.js",
+      "_Typography-58006bdd.js",
+      "_styled-6ddd3ae9.js",
+      "_dividerClasses-46d6c7a3.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Repairs/BlockInfo/Components/BlockInfoCalled.jsx"
   },
   "resources/js/Pages/Repairs/BlockInfo/Components/BlockInfoCustomer.jsx": {
-    "file": "assets/BlockInfoCustomer-4df42b73.js",
+    "file": "assets/BlockInfoCustomer-7441c5b5.js",
     "imports": [
       "resources/js/app.jsx",
-      "_BlockInfoLayout-618789e0.js",
+      "_BlockInfoLayout-e5800e77.js",
       "_formatDate-844e8021.js",
-      "_TextField-cb3f02db.js",
-      "_Box-231cdc23.js",
-      "_createTheme-45223b27.js",
-      "_extendSxProp-7b2aa809.js",
-      "_Typography-b7819ec0.js",
-      "_styled-ca6570b2.js",
-      "_dividerClasses-fd7645b7.js",
-      "_createSvgIcon-7e5898f0.js",
-      "_useId-436e340f.js",
-      "_Menu-1d183c87.js",
-      "_Modal-d3c2b610.js",
-      "_TransitionGroupContext-91a870c1.js"
+      "_TextField-94f03ebe.js",
+      "_Box-132a8830.js",
+      "_createTheme-e443a688.js",
+      "_extendSxProp-5b301ce9.js",
+      "_Typography-58006bdd.js",
+      "_styled-6ddd3ae9.js",
+      "_dividerClasses-46d6c7a3.js",
+      "_createSvgIcon-74e13a21.js",
+      "_useId-95af0284.js",
+      "_Menu-f2ff0f34.js",
+      "_Modal-012e7dea.js",
+      "_TransitionGroupContext-bf46694f.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Repairs/BlockInfo/Components/BlockInfoCustomer.jsx"
   },
   "resources/js/Pages/Repairs/BlockInfo/Components/BlockInfoDiagnostic.jsx": {
-    "file": "assets/BlockInfoDiagnostic-21620a33.js",
+    "file": "assets/BlockInfoDiagnostic-41b50bf3.js",
     "imports": [
       "resources/js/app.jsx",
-      "_BlockInfoLayout-618789e0.js",
-      "_TextField-cb3f02db.js",
-      "_Box-231cdc23.js",
-      "_createTheme-45223b27.js",
-      "_extendSxProp-7b2aa809.js",
-      "_Typography-b7819ec0.js",
-      "_styled-ca6570b2.js",
-      "_dividerClasses-fd7645b7.js",
-      "_createSvgIcon-7e5898f0.js",
-      "_useId-436e340f.js",
-      "_Menu-1d183c87.js",
-      "_Modal-d3c2b610.js",
-      "_TransitionGroupContext-91a870c1.js"
+      "_BlockInfoLayout-e5800e77.js",
+      "_TextField-94f03ebe.js",
+      "_Box-132a8830.js",
+      "_createTheme-e443a688.js",
+      "_extendSxProp-5b301ce9.js",
+      "_Typography-58006bdd.js",
+      "_styled-6ddd3ae9.js",
+      "_dividerClasses-46d6c7a3.js",
+      "_createSvgIcon-74e13a21.js",
+      "_useId-95af0284.js",
+      "_Menu-f2ff0f34.js",
+      "_Modal-012e7dea.js",
+      "_TransitionGroupContext-bf46694f.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Repairs/BlockInfo/Components/BlockInfoDiagnostic.jsx"
   },
   "resources/js/Pages/Repairs/BlockInfo/Components/BlockInfoFixed.jsx": {
-    "file": "assets/BlockInfoFixed-566bec42.js",
+    "file": "assets/BlockInfoFixed-6d7558c4.js",
     "imports": [
       "resources/js/app.jsx",
-      "_BlockInfoLayout-618789e0.js",
-      "_TextField-cb3f02db.js",
-      "_Box-231cdc23.js",
-      "_createTheme-45223b27.js",
-      "_extendSxProp-7b2aa809.js",
-      "_Typography-b7819ec0.js",
-      "_styled-ca6570b2.js",
-      "_dividerClasses-fd7645b7.js",
-      "_createSvgIcon-7e5898f0.js",
-      "_useId-436e340f.js",
-      "_Menu-1d183c87.js",
-      "_Modal-d3c2b610.js",
-      "_TransitionGroupContext-91a870c1.js"
+      "_BlockInfoLayout-e5800e77.js",
+      "_TextField-94f03ebe.js",
+      "_Box-132a8830.js",
+      "_createTheme-e443a688.js",
+      "_extendSxProp-5b301ce9.js",
+      "_Typography-58006bdd.js",
+      "_styled-6ddd3ae9.js",
+      "_dividerClasses-46d6c7a3.js",
+      "_createSvgIcon-74e13a21.js",
+      "_useId-95af0284.js",
+      "_Menu-f2ff0f34.js",
+      "_Modal-012e7dea.js",
+      "_TransitionGroupContext-bf46694f.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Repairs/BlockInfo/Components/BlockInfoFixed.jsx"
   },
   "resources/js/Pages/Repairs/BlockInfo/Components/BlockInfoOrdered.jsx": {
-    "file": "assets/BlockInfoOrdered-963b6f86.js",
+    "file": "assets/BlockInfoOrdered-b5e9a16c.js",
     "imports": [
       "resources/js/app.jsx",
-      "_BlockInfoLayout-618789e0.js",
-      "_TextField-cb3f02db.js",
-      "_Box-231cdc23.js",
-      "_createTheme-45223b27.js",
-      "_extendSxProp-7b2aa809.js",
-      "_Typography-b7819ec0.js",
-      "_styled-ca6570b2.js",
-      "_dividerClasses-fd7645b7.js",
-      "_createSvgIcon-7e5898f0.js",
-      "_useId-436e340f.js",
-      "_Menu-1d183c87.js",
-      "_Modal-d3c2b610.js",
-      "_TransitionGroupContext-91a870c1.js"
+      "_BlockInfoLayout-e5800e77.js",
+      "_TextField-94f03ebe.js",
+      "_Box-132a8830.js",
+      "_createTheme-e443a688.js",
+      "_extendSxProp-5b301ce9.js",
+      "_Typography-58006bdd.js",
+      "_styled-6ddd3ae9.js",
+      "_dividerClasses-46d6c7a3.js",
+      "_createSvgIcon-74e13a21.js",
+      "_useId-95af0284.js",
+      "_Menu-f2ff0f34.js",
+      "_Modal-012e7dea.js",
+      "_TransitionGroupContext-bf46694f.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Repairs/BlockInfo/Components/BlockInfoOrdered.jsx"
   },
   "resources/js/Pages/Repairs/BlockInfo/Components/BlockInfoPicked.jsx": {
-    "file": "assets/BlockInfoPicked-09ab0446.js",
+    "file": "assets/BlockInfoPicked-23802dcd.js",
     "imports": [
       "resources/js/app.jsx",
-      "_BlockInfoLayout-618789e0.js",
-      "_Box-231cdc23.js",
-      "_createTheme-45223b27.js",
-      "_extendSxProp-7b2aa809.js",
-      "_Typography-b7819ec0.js",
-      "_styled-ca6570b2.js",
-      "_dividerClasses-fd7645b7.js"
+      "_BlockInfoLayout-e5800e77.js",
+      "_Box-132a8830.js",
+      "_createTheme-e443a688.js",
+      "_extendSxProp-5b301ce9.js",
+      "_Typography-58006bdd.js",
+      "_styled-6ddd3ae9.js",
+      "_dividerClasses-46d6c7a3.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Repairs/BlockInfo/Components/BlockInfoPicked.jsx"
   },
   "resources/js/Pages/Repairs/BlockOrdered/BlockOrdered.jsx": {
-    "file": "assets/BlockOrdered-f628d302.js",
+    "file": "assets/BlockOrdered-9048eac3.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Check-477cc82e.js",
-      "_Modal-2681e1c0.js",
+      "_Check-798d69d4.js",
+      "_Modal-e122baf5.js",
       "resources/js/Pages/Repairs/Components/ConfirmDialog.jsx",
-      "_repairStore-f2cf11a2.js",
-      "_LocalShipping-94e7d394.js",
-      "_useMutation-b0c41f25.js",
-      "_Box-231cdc23.js",
-      "_TextField-cb3f02db.js",
-      "_createTheme-45223b27.js",
-      "_Autocomplete-69abba2e.js",
-      "_MenuItem-2c42dd32.js",
-      "_LoadingButton-142f046c.js",
-      "_Button-bfc4daa2.js",
-      "_createSvgIcon-e576eed7.js",
-      "_createSvgIcon-7e5898f0.js",
-      "_styled-ca6570b2.js",
-      "_useId-436e340f.js",
-      "_TransitionGroupContext-91a870c1.js",
-      "_ButtonBase-565ed3e8.js",
-      "_Modal-d3c2b610.js",
-      "_Container-b1758a4a.js",
-      "_styled-5cf96515.js",
-      "_Typography-b7819ec0.js",
-      "_extendSxProp-7b2aa809.js",
+      "_repairStore-b76ed4db.js",
+      "_LocalShipping-d2d6695e.js",
+      "_useMutation-fe1021bb.js",
+      "_Box-132a8830.js",
+      "_TextField-94f03ebe.js",
+      "_createTheme-e443a688.js",
+      "_Autocomplete-e729db2b.js",
+      "_MenuItem-46852476.js",
+      "_LoadingButton-f9168bcf.js",
+      "_Button-69efd48b.js",
+      "_createSvgIcon-5ec9d790.js",
+      "_createSvgIcon-74e13a21.js",
+      "_styled-6ddd3ae9.js",
+      "_useId-95af0284.js",
+      "_TransitionGroupContext-bf46694f.js",
+      "_ButtonBase-bd429d2a.js",
+      "_Modal-012e7dea.js",
+      "_Container-acfea48f.js",
+      "_styled-6f8de2aa.js",
+      "_Typography-58006bdd.js",
+      "_extendSxProp-5b301ce9.js",
       "_vanilla-8854675d.js",
-      "_Menu-1d183c87.js",
-      "_IconButton-bb73b0e4.js",
-      "_Popper-5213f63f.js",
-      "_dividerClasses-fd7645b7.js"
+      "_Menu-f2ff0f34.js",
+      "_IconButton-86d070ce.js",
+      "_Popper-2c55403e.js",
+      "_dividerClasses-46d6c7a3.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Repairs/BlockOrdered/BlockOrdered.jsx"
   },
   "resources/js/Pages/Repairs/BlockPickedUp/BlockPickedUp.jsx": {
-    "file": "assets/BlockPickedUp-1cc8b18b.js",
+    "file": "assets/BlockPickedUp-d989eb82.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Check-477cc82e.js",
+      "_Check-798d69d4.js",
       "resources/js/Pages/Repairs/Components/ConfirmDialog.jsx",
-      "_Modal-2681e1c0.js",
-      "_useMutation-b0c41f25.js",
-      "_Box-231cdc23.js",
-      "_TextField-cb3f02db.js",
-      "_LoadingButton-142f046c.js",
-      "_createSvgIcon-e576eed7.js",
-      "_createSvgIcon-7e5898f0.js",
-      "_createTheme-45223b27.js",
-      "_styled-ca6570b2.js",
-      "_useId-436e340f.js",
-      "_TransitionGroupContext-91a870c1.js",
-      "_ButtonBase-565ed3e8.js",
-      "_Modal-d3c2b610.js",
-      "_Typography-b7819ec0.js",
-      "_extendSxProp-7b2aa809.js",
-      "_Button-bfc4daa2.js",
-      "_Container-b1758a4a.js",
-      "_styled-5cf96515.js",
-      "_Menu-1d183c87.js"
+      "_Modal-e122baf5.js",
+      "_useMutation-fe1021bb.js",
+      "_Box-132a8830.js",
+      "_TextField-94f03ebe.js",
+      "_LoadingButton-f9168bcf.js",
+      "_createSvgIcon-5ec9d790.js",
+      "_createSvgIcon-74e13a21.js",
+      "_createTheme-e443a688.js",
+      "_styled-6ddd3ae9.js",
+      "_useId-95af0284.js",
+      "_TransitionGroupContext-bf46694f.js",
+      "_ButtonBase-bd429d2a.js",
+      "_Modal-012e7dea.js",
+      "_Typography-58006bdd.js",
+      "_extendSxProp-5b301ce9.js",
+      "_Button-69efd48b.js",
+      "_Container-acfea48f.js",
+      "_styled-6f8de2aa.js",
+      "_Menu-f2ff0f34.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Repairs/BlockPickedUp/BlockPickedUp.jsx"
   },
   "resources/js/Pages/Repairs/Components/ConfirmDialog.jsx": {
-    "file": "assets/ConfirmDialog-570cef06.js",
+    "file": "assets/ConfirmDialog-56d74f25.js",
     "imports": [
       "resources/js/app.jsx",
-      "_createTheme-45223b27.js",
-      "_styled-ca6570b2.js",
-      "_Modal-d3c2b610.js",
-      "_useId-436e340f.js",
-      "_Typography-b7819ec0.js",
-      "_Button-bfc4daa2.js",
-      "_TransitionGroupContext-91a870c1.js",
-      "_extendSxProp-7b2aa809.js",
-      "_ButtonBase-565ed3e8.js"
+      "_createTheme-e443a688.js",
+      "_styled-6ddd3ae9.js",
+      "_Modal-012e7dea.js",
+      "_useId-95af0284.js",
+      "_Typography-58006bdd.js",
+      "_Button-69efd48b.js",
+      "_TransitionGroupContext-bf46694f.js",
+      "_extendSxProp-5b301ce9.js",
+      "_ButtonBase-bd429d2a.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Repairs/Components/ConfirmDialog.jsx"
   },
   "resources/js/Pages/Repairs/Components/ModalCreate.jsx": {
-    "file": "assets/ModalCreate-876bb6da.js",
+    "file": "assets/ModalCreate-f24a0db6.js",
     "imports": [
       "resources/js/app.jsx",
       "resources/js/Pages/Components/BlockDivider.jsx",
-      "_Modal-2681e1c0.js",
+      "_Modal-e122baf5.js",
       "resources/js/Pages/Components/InputText.jsx",
-      "_repairStore-f2cf11a2.js",
-      "_Autocomplete-69abba2e.js",
-      "_TextField-cb3f02db.js",
-      "_Box-231cdc23.js",
-      "_LoadingButton-142f046c.js",
-      "_Button-bfc4daa2.js",
-      "_Typography-b7819ec0.js",
-      "_createTheme-45223b27.js",
-      "_styled-ca6570b2.js",
-      "_extendSxProp-7b2aa809.js",
-      "_Modal-d3c2b610.js",
-      "_TransitionGroupContext-91a870c1.js",
-      "_useId-436e340f.js",
-      "_Container-b1758a4a.js",
-      "_styled-5cf96515.js",
-      "_createSvgIcon-7e5898f0.js",
-      "_Menu-1d183c87.js",
+      "_repairStore-b76ed4db.js",
+      "_Autocomplete-e729db2b.js",
+      "_TextField-94f03ebe.js",
+      "_Box-132a8830.js",
+      "_LoadingButton-f9168bcf.js",
+      "_Button-69efd48b.js",
+      "_Typography-58006bdd.js",
+      "_createTheme-e443a688.js",
+      "_styled-6ddd3ae9.js",
+      "_extendSxProp-5b301ce9.js",
+      "_Modal-012e7dea.js",
+      "_TransitionGroupContext-bf46694f.js",
+      "_useId-95af0284.js",
+      "_Container-acfea48f.js",
+      "_styled-6f8de2aa.js",
+      "_createSvgIcon-74e13a21.js",
+      "_Menu-f2ff0f34.js",
       "_vanilla-8854675d.js",
-      "_IconButton-bb73b0e4.js",
-      "_ButtonBase-565ed3e8.js",
-      "_Popper-5213f63f.js"
+      "_IconButton-86d070ce.js",
+      "_ButtonBase-bd429d2a.js",
+      "_Popper-2c55403e.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Repairs/Components/ModalCreate.jsx"
   },
   "resources/js/Pages/Repairs/Components/ModalEdit.jsx": {
-    "file": "assets/ModalEdit-4be98594.js",
+    "file": "assets/ModalEdit-10a52a4d.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Modal-2681e1c0.js",
+      "_Modal-e122baf5.js",
       "_editStore-d065645d.js",
       "resources/js/Pages/Components/BlockDivider.jsx",
-      "_repairStore-f2cf11a2.js",
-      "_useMutation-b0c41f25.js",
-      "_TextField-cb3f02db.js",
-      "_Autocomplete-69abba2e.js",
-      "_MenuItem-2c42dd32.js",
-      "_Box-231cdc23.js",
-      "_LoadingButton-142f046c.js",
-      "_Button-bfc4daa2.js",
-      "_Modal-d3c2b610.js",
-      "_createTheme-45223b27.js",
-      "_styled-ca6570b2.js",
-      "_TransitionGroupContext-91a870c1.js",
-      "_useId-436e340f.js",
-      "_Container-b1758a4a.js",
-      "_styled-5cf96515.js",
-      "_Typography-b7819ec0.js",
-      "_extendSxProp-7b2aa809.js",
+      "_repairStore-b76ed4db.js",
+      "_useMutation-fe1021bb.js",
+      "_TextField-94f03ebe.js",
+      "_Autocomplete-e729db2b.js",
+      "_MenuItem-46852476.js",
+      "_Box-132a8830.js",
+      "_LoadingButton-f9168bcf.js",
+      "_Button-69efd48b.js",
+      "_Modal-012e7dea.js",
+      "_createTheme-e443a688.js",
+      "_styled-6ddd3ae9.js",
+      "_TransitionGroupContext-bf46694f.js",
+      "_useId-95af0284.js",
+      "_Container-acfea48f.js",
+      "_styled-6f8de2aa.js",
+      "_Typography-58006bdd.js",
+      "_extendSxProp-5b301ce9.js",
       "_vanilla-8854675d.js",
-      "_createSvgIcon-7e5898f0.js",
-      "_Menu-1d183c87.js",
-      "_IconButton-bb73b0e4.js",
-      "_ButtonBase-565ed3e8.js",
-      "_Popper-5213f63f.js",
-      "_dividerClasses-fd7645b7.js"
+      "_createSvgIcon-74e13a21.js",
+      "_Menu-f2ff0f34.js",
+      "_IconButton-86d070ce.js",
+      "_ButtonBase-bd429d2a.js",
+      "_Popper-2c55403e.js",
+      "_dividerClasses-46d6c7a3.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Repairs/Components/ModalEdit.jsx"
   },
   "resources/js/Pages/Repairs/Components/ToggleComplited.jsx": {
-    "file": "assets/ToggleComplited-ec7bf45f.js",
+    "file": "assets/ToggleComplited-7d2d5848.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Check-477cc82e.js",
-      "_LocalShipping-94e7d394.js",
-      "_LoadingButton-142f046c.js",
-      "_createSvgIcon-e576eed7.js",
-      "_createSvgIcon-7e5898f0.js",
-      "_createTheme-45223b27.js",
-      "_styled-ca6570b2.js",
-      "_useId-436e340f.js",
-      "_TransitionGroupContext-91a870c1.js",
-      "_ButtonBase-565ed3e8.js",
-      "_Button-bfc4daa2.js"
+      "_Check-798d69d4.js",
+      "_LocalShipping-d2d6695e.js",
+      "_LoadingButton-f9168bcf.js",
+      "_createSvgIcon-5ec9d790.js",
+      "_createSvgIcon-74e13a21.js",
+      "_createTheme-e443a688.js",
+      "_styled-6ddd3ae9.js",
+      "_useId-95af0284.js",
+      "_TransitionGroupContext-bf46694f.js",
+      "_ButtonBase-bd429d2a.js",
+      "_Button-69efd48b.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Repairs/Components/ToggleComplited.jsx"
   },
   "resources/js/Pages/Repairs/Repairs.jsx": {
-    "file": "assets/Repairs-7f8ac34e.js",
+    "file": "assets/Repairs-2a794ad8.js",
     "imports": [
       "resources/js/app.jsx",
       "resources/js/Pages/Repairs/RepairsLayout.jsx",
-      "_Row-2e9bd677.js",
+      "_Row-0cc8e50b.js",
       "resources/js/Pages/Repairs/Components/ModalEdit.jsx",
       "resources/js/Pages/Repairs/Components/ModalCreate.jsx",
-      "_repairStore-f2cf11a2.js",
-      "_createSvgIcon-e576eed7.js",
-      "_Box-231cdc23.js",
-      "_Button-bfc4daa2.js",
-      "_Modal-d3c2b610.js",
-      "_TextField-cb3f02db.js",
-      "_IconButton-bb73b0e4.js",
-      "_BlockInfoLayout-618789e0.js",
-      "_createTheme-45223b27.js",
-      "_styled-ca6570b2.js",
-      "_Autocomplete-69abba2e.js",
-      "_createSvgIcon-7e5898f0.js",
-      "_ButtonBase-565ed3e8.js",
+      "_repairStore-b76ed4db.js",
+      "_createSvgIcon-5ec9d790.js",
+      "_Box-132a8830.js",
+      "_Button-69efd48b.js",
+      "_Modal-012e7dea.js",
+      "_TextField-94f03ebe.js",
+      "_IconButton-86d070ce.js",
+      "_BlockInfoLayout-e5800e77.js",
+      "_createTheme-e443a688.js",
+      "_styled-6ddd3ae9.js",
+      "_Autocomplete-e729db2b.js",
+      "_createSvgIcon-74e13a21.js",
+      "_ButtonBase-bd429d2a.js",
       "resources/js/Pages/DashboardLayout.jsx",
-      "_Container-b1758a4a.js",
-      "_styled-5cf96515.js",
-      "_Menu-1d183c87.js",
-      "_TransitionGroupContext-91a870c1.js",
-      "_useId-436e340f.js",
-      "_MenuItem-2c42dd32.js",
-      "_dividerClasses-fd7645b7.js",
-      "_Typography-b7819ec0.js",
-      "_extendSxProp-7b2aa809.js",
-      "_Popper-5213f63f.js",
+      "_Container-acfea48f.js",
+      "_styled-6f8de2aa.js",
+      "_Menu-f2ff0f34.js",
+      "_TransitionGroupContext-bf46694f.js",
+      "_useId-95af0284.js",
+      "_MenuItem-46852476.js",
+      "_dividerClasses-46d6c7a3.js",
+      "_Typography-58006bdd.js",
+      "_extendSxProp-5b301ce9.js",
+      "_Popper-2c55403e.js",
       "resources/js/Pages/Repairs/BlockInfo/BlockInfo.jsx",
       "_editStore-d065645d.js",
       "_vanilla-8854675d.js",
@@ -997,14 +997,14 @@
       "resources/js/Pages/Repairs/BlockInfo/Components/BlockInfoFixed.jsx",
       "resources/js/Pages/Repairs/BlockInfo/Components/BlockInfoDiagnostic.jsx",
       "resources/js/Pages/Repairs/BlockFixed/BlockFixed.jsx",
-      "_Check-477cc82e.js",
+      "_Check-798d69d4.js",
       "resources/js/Pages/Repairs/Components/ConfirmDialog.jsx",
-      "_Modal-2681e1c0.js",
-      "_useMutation-b0c41f25.js",
-      "_LoadingButton-142f046c.js",
+      "_Modal-e122baf5.js",
+      "_useMutation-fe1021bb.js",
+      "_LoadingButton-f9168bcf.js",
       "resources/js/Pages/Repairs/BlockPickedUp/BlockPickedUp.jsx",
       "resources/js/Pages/Repairs/BlockOrdered/BlockOrdered.jsx",
-      "_LocalShipping-94e7d394.js",
+      "_LocalShipping-d2d6695e.js",
       "resources/js/Pages/Repairs/BlockCalled/BlockCalled.jsx",
       "_formatDate-844e8021.js",
       "resources/js/Pages/Repairs/BlockDiagnostic/BlockDiagnostic.jsx",
@@ -1015,70 +1015,70 @@
     "src": "resources/js/Pages/Repairs/Repairs.jsx"
   },
   "resources/js/Pages/Repairs/RepairsLayout.jsx": {
-    "file": "assets/RepairsLayout-9a2179f1.js",
+    "file": "assets/RepairsLayout-a9fe5ec5.js",
     "imports": [
       "resources/js/app.jsx",
       "resources/js/Pages/DashboardLayout.jsx",
-      "_createSvgIcon-e576eed7.js",
-      "_createSvgIcon-7e5898f0.js",
-      "_createTheme-45223b27.js",
-      "_styled-ca6570b2.js",
-      "_useId-436e340f.js",
-      "_TransitionGroupContext-91a870c1.js",
-      "_ButtonBase-565ed3e8.js",
-      "_Modal-d3c2b610.js",
-      "_Container-b1758a4a.js",
-      "_styled-5cf96515.js",
-      "_Box-231cdc23.js",
-      "_extendSxProp-7b2aa809.js",
-      "_IconButton-bb73b0e4.js",
-      "_Menu-1d183c87.js",
-      "_MenuItem-2c42dd32.js",
-      "_dividerClasses-fd7645b7.js",
-      "_Typography-b7819ec0.js",
-      "_Button-bfc4daa2.js",
-      "_Popper-5213f63f.js"
+      "_createSvgIcon-5ec9d790.js",
+      "_createSvgIcon-74e13a21.js",
+      "_createTheme-e443a688.js",
+      "_styled-6ddd3ae9.js",
+      "_useId-95af0284.js",
+      "_TransitionGroupContext-bf46694f.js",
+      "_ButtonBase-bd429d2a.js",
+      "_Modal-012e7dea.js",
+      "_Container-acfea48f.js",
+      "_styled-6f8de2aa.js",
+      "_Box-132a8830.js",
+      "_extendSxProp-5b301ce9.js",
+      "_IconButton-86d070ce.js",
+      "_Menu-f2ff0f34.js",
+      "_MenuItem-46852476.js",
+      "_dividerClasses-46d6c7a3.js",
+      "_Typography-58006bdd.js",
+      "_Button-69efd48b.js",
+      "_Popper-2c55403e.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Repairs/RepairsLayout.jsx"
   },
   "resources/js/Pages/Users/Users.jsx": {
-    "file": "assets/Users-30afc8be.js",
+    "file": "assets/Users-927b4619.js",
     "imports": [
       "resources/js/app.jsx",
       "resources/js/Pages/DashboardLayout.jsx",
-      "_createSvgIcon-e576eed7.js",
-      "_createSvgIcon-7e5898f0.js",
-      "_createTheme-45223b27.js",
-      "_styled-ca6570b2.js",
-      "_useId-436e340f.js",
-      "_TransitionGroupContext-91a870c1.js",
-      "_ButtonBase-565ed3e8.js",
-      "_Modal-d3c2b610.js",
-      "_Container-b1758a4a.js",
-      "_styled-5cf96515.js",
-      "_Box-231cdc23.js",
-      "_extendSxProp-7b2aa809.js",
-      "_IconButton-bb73b0e4.js",
-      "_Menu-1d183c87.js",
-      "_MenuItem-2c42dd32.js",
-      "_dividerClasses-fd7645b7.js",
-      "_Typography-b7819ec0.js",
-      "_Button-bfc4daa2.js",
-      "_Popper-5213f63f.js"
+      "_createSvgIcon-5ec9d790.js",
+      "_createSvgIcon-74e13a21.js",
+      "_createTheme-e443a688.js",
+      "_styled-6ddd3ae9.js",
+      "_useId-95af0284.js",
+      "_TransitionGroupContext-bf46694f.js",
+      "_ButtonBase-bd429d2a.js",
+      "_Modal-012e7dea.js",
+      "_Container-acfea48f.js",
+      "_styled-6f8de2aa.js",
+      "_Box-132a8830.js",
+      "_extendSxProp-5b301ce9.js",
+      "_IconButton-86d070ce.js",
+      "_Menu-f2ff0f34.js",
+      "_MenuItem-46852476.js",
+      "_dividerClasses-46d6c7a3.js",
+      "_Typography-58006bdd.js",
+      "_Button-69efd48b.js",
+      "_Popper-2c55403e.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Users/Users.jsx"
   },
   "resources/js/Pages/Welcome.jsx": {
-    "file": "assets/Welcome-ab16e1ad.js",
+    "file": "assets/Welcome-5501b99c.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Button-bfc4daa2.js",
-      "_createTheme-45223b27.js",
-      "_styled-ca6570b2.js",
-      "_ButtonBase-565ed3e8.js",
-      "_TransitionGroupContext-91a870c1.js"
+      "_Button-69efd48b.js",
+      "_createTheme-e443a688.js",
+      "_styled-6ddd3ae9.js",
+      "_ButtonBase-bd429d2a.js",
+      "_TransitionGroupContext-bf46694f.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Welcome.jsx"
@@ -1114,7 +1114,7 @@
       "resources/js/Pages/Repairs/BlockInfo/Components/BlockInfoCustomer.jsx",
       "resources/js/Pages/Repairs/BlockInfo/Components/BlockInfoDiagnostic.jsx",
       "resources/js/Pages/Repairs/BlockInfo/Components/BlockInfoFixed.jsx",
-      "_BlockInfoLayout-618789e0.js",
+      "_BlockInfoLayout-e5800e77.js",
       "resources/js/Pages/Repairs/BlockInfo/Components/BlockInfoOrdered.jsx",
       "resources/js/Pages/Repairs/BlockInfo/Components/BlockInfoPicked.jsx",
       "resources/js/Pages/Repairs/BlockOrdered/BlockOrdered.jsx",
@@ -1122,14 +1122,14 @@
       "resources/js/Pages/Repairs/Components/ConfirmDialog.jsx",
       "resources/js/Pages/Repairs/Components/ModalCreate.jsx",
       "resources/js/Pages/Repairs/Components/ModalEdit.jsx",
-      "_Row-2e9bd677.js",
+      "_Row-0cc8e50b.js",
       "resources/js/Pages/Repairs/Components/ToggleComplited.jsx",
       "resources/js/Pages/Repairs/Repairs.jsx",
       "resources/js/Pages/Repairs/RepairsLayout.jsx",
       "resources/js/Pages/Users/Users.jsx",
       "resources/js/Pages/Welcome.jsx"
     ],
-    "file": "assets/app-4046141f.js",
+    "file": "assets/app-3202f596.js",
     "isEntry": true,
     "src": "resources/js/app.jsx"
   }
