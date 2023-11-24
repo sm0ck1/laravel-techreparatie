@@ -1,4 +1,5 @@
-import {Autocomplete, LoadingButton} from "@mui/lab";
+import {LoadingButton} from "@mui/lab";
+import Autocomplete from '@mui/material/Autocomplete'
 import * as React from "react";
 import {useEffect, useState} from "react";
 import RemoveIcon from "@mui/icons-material/Remove";

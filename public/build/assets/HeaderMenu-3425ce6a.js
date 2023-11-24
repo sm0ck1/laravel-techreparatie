@@ -1,1 +1,0 @@
-import{j as a,y as r}from"./app-da48c8f9.js";const l=()=>{const t=({key:e})=>{route().has(e)&&r.visit(route(e))};return a.jsx(Menu,{theme:"dark",onSelect:t,mode:"horizontal",defaultSelectedKeys:[route().current()],items:[{key:"dashboard",label:"Dashboard"},{key:"repairs.index",label:"Repairs"},{key:3,label:"Employees"},{key:4,label:"Settings"}]})};export{l as default};
