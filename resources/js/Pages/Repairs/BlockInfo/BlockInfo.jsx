@@ -37,7 +37,7 @@ const BlockInfo = ({repair}) => {
                     display: 'flex',
                     width: '100%',
                 }}>
-                    {/*<BlockInfoCustomer repair={repair}/>*/}
+                    <BlockInfoCustomer repair={repair}/>
                     <BlockInfoDiagnostic repair={repair}/>
                     <BlockInfoOrdered repair={repair}/>
                     <BlockInfoFixed repair={repair}/>
