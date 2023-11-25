@@ -24,7 +24,8 @@ class RepairDiagnosticRequest extends FormRequest
     {
         return [
             'is_diagnostic' => 'required|boolean',
-            'diagnostic_description' => ''
+            'diagnostic_description' => '',
+            'component' => ''
         ];
     }
 }

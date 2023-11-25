@@ -23,7 +23,7 @@ const BlockOrdered = ({repair}) => {
     const [modalOpen, setModalOpen] = useState(false);
     const [data, setData] = useState({
         who_ordered_id: 0,
-        component: '',
+        component: repair.component,
         is_ordered_component: false,
         cost: undefined,
         where_ordered: ''

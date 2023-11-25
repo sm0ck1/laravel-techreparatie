@@ -23,7 +23,7 @@ class RepairCalledRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'is_called' => 'required|boolean',
+            'is_called' => 'required|int',
         ];
     }
 }

@@ -16,6 +16,7 @@ const BlockDiagnostic = ({repair}) => {
     const [modalOpen, setModalOpen] = useState(false);
     const [data, setData] = useState({
         diagnostic_description: '',
+        component: '',
         [field]: false,
     });
 
@@ -68,7 +69,14 @@ const BlockDiagnostic = ({repair}) => {
                                    helperText={error?.diagnostic_description}
                                    variant="outlined"/>
                     </Box>
-
+                    <Box>
+                        <TextField value={data.component || ''}
+                                   onChange={(e) => setData({...data, 'component': e.target.value})}
+                                   sx={{width: '100%'}} id="outlined-basic" label="Need to order"
+                                   error={!!error?.component}
+                                   helperText={error?.component}
+                                   variant="outlined"/>
+                    </Box>
                     <Box sx={{display: 'flex', gap: 3, justifyContent: 'space-between'}}>
                         <Box sx={{display: 'flex', gap: 3}}>
                             <LoadingButton color='success' disabled={!data.diagnostic_description} loading={isPending}

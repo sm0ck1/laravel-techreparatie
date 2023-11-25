@@ -18,7 +18,7 @@ const BlockFixed = ({repair}) => {
     const employees = snapRepairStore.employees;
     const [data, setData] = useState({
         user_id: 0,
-        price: 0,
+        price: undefined,
         solution_description: '',
         is_fixed: true,
     });
