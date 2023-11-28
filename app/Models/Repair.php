@@ -122,7 +122,9 @@ class Repair extends Model
 
     public function scopeNeedOrder(Builder $query): void
     {
-        $query->where('component', '!=', '')->where('is_ordered_component', false);
+        $query->where('component', '!=', '')
+            ->where('is_fixed', 0)
+            ->where('is_ordered_component', 0);
     }
 
     public function scopeNeedCall(Builder $query): void
@@ -131,6 +133,6 @@ class Repair extends Model
             $builder->where('is_called', 0)
                 ->orWhere('is_called', 2);
 //                ->orWhereDate('date_called', '>=', Carbon::now()->addDay()->format('Y-m-d 00:00:00'));
-        })->where('is_fixed', 0)->where('is_picked_up', 0);
+        })->where('is_fixed', 1)->where('is_picked_up', 0);
     }
 }
