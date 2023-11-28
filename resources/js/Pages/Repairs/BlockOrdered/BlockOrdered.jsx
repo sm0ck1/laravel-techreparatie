@@ -9,6 +9,7 @@ import {Box, Button, FormControl, InputLabel, MenuItem, Select, TextField} from 
 import {repairStore} from "@/shared/store/repairStore.js";
 import {useSnapshot} from "valtio";
 import CheckIcon from "@mui/icons-material/Check";
+import BusAlertIcon from '@mui/icons-material/BusAlert';
 import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 import useMutationOrdered from "@/shared/hooks/useMutationOrdered.js";
 
@@ -113,6 +114,9 @@ const BlockOrdered = ({repair}) => {
         } else if (status === 3) {
             return <><RemoveIcon/></>;
         } else {
+            if(!!repair.component && repair.is_ordered_component === 0) {
+                return <BusAlertIcon/>;
+            }
             return <RemoveIcon/>;
         }
     };
@@ -124,7 +128,9 @@ const BlockOrdered = ({repair}) => {
                     <Box>
                         <TextField value={data.component || ''}
                                    onChange={(e) => setData({...data, 'component': e.target.value})}
-                                   sx={{width: '100%'}} id="outlined-basic" label="Need to order"
+                                   sx={{width: '100%'}}
+                                   id={"component"}
+                                   label="Need to order"
                                    error={!!error?.component}
                                    helperText={error?.component}
                                    variant="outlined"/>
@@ -134,14 +140,16 @@ const BlockOrdered = ({repair}) => {
                                    type={'number'}
                                    min={0}
                                    onChange={(e) => setData({...data, 'cost': e.target.value})}
-                                   sx={{width: '100%'}} id="outlined-basic" label="Cost"
+                                   sx={{width: '100%'}}
+                                   id={"cost"}
+                                   label="Cost"
                                    error={!!error?.cost}
                                    helperText={error?.cost}
                                    variant="outlined"/>
                     </Box>
                     <Box>
                         <Autocomplete
-                            id="free-solo-demo"
+                            id="where_ordered"
                             freeSolo
                             options={groupWhereOrdered.map((option) => option.where_ordered)}
                             renderInput={(params) => <TextField
@@ -159,7 +167,7 @@ const BlockOrdered = ({repair}) => {
                             <InputLabel id="demo-simple-select-label">Who ordered?</InputLabel>
                             <Select
                                 labelId="demo-simple-select-label"
-                                id="demo-simple-select"
+                                id="who_ordered"
                                 value={data.who_ordered_id || 0}
                                 label="Who ordered?"
                                 error={!!error?.who_ordered_id}

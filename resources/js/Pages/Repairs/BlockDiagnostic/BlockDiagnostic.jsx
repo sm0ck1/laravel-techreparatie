@@ -63,6 +63,8 @@ const BlockDiagnostic = ({repair}) => {
                 <Box sx={{display: 'flex', gap: 5, flexDirection: 'column'}}>
                     <Box>
                         <TextField value={data.diagnostic_description || ''}
+                                   rows={4}
+                                   multiline
                                    onChange={(e) => setData({...data, diagnostic_description: e.target.value})}
                                    sx={{width: '100%'}} id="outlined-basic" label="Result diagnostic"
                                    error={isError}

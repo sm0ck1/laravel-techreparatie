@@ -22,7 +22,7 @@ class RepairFixedRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'is_fixed' => 'required|boolean',
+            'is_fixed' => 'required|int',
             'user_id' => 'required|integer',
             'price' => 'required|numeric',
             'solution_description' => 'required|string'

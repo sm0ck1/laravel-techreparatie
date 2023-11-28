@@ -8,6 +8,8 @@ const BlockInfoDiagnostic = ({repair}) => {
     return (
         <BlockInfoLayout title='Diagnostic' date={repair.date_diagnostic}>
             <TextField
+                rows={4}
+                multiline
                 size='small'
                 label="Diagostic description"
                 defaultValue={repair.diagnostic_description}

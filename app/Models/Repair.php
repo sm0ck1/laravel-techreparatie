@@ -2,9 +2,11 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Carbon;
 
 class Repair extends Model
 {
@@ -116,5 +118,19 @@ class Repair extends Model
     public function whoOrdered()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function scopeNeedOrder(Builder $query): void
+    {
+        $query->where('component', '!=', '')->where('is_ordered_component', false);
+    }
+
+    public function scopeNeedCall(Builder $query): void
+    {
+        $query->where(function ($builder) {
+            $builder->where('is_called', 0)
+                ->orWhere('is_called', 2);
+//                ->orWhereDate('date_called', '>=', Carbon::now()->addDay()->format('Y-m-d 00:00:00'));
+        })->where('is_fixed', 0)->where('is_picked_up', 0);
     }
 }

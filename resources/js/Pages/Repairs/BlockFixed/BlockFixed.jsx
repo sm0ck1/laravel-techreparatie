@@ -1,6 +1,7 @@
 import {LoadingButton} from "@mui/lab";
-import CheckIcon from "@mui/icons-material/Check.js";
-import RemoveIcon from "@mui/icons-material/Remove.js";
+import CheckIcon from "@mui/icons-material/Check";
+import RemoveIcon from "@mui/icons-material/Remove";
+import ClearIcon from '@mui/icons-material/Clear';
 import * as React from "react";
 import {useEffect, useState} from "react";
 import ConfirmDialog from "@/Pages/Repairs/Components/ConfirmDialog.jsx";
@@ -20,27 +21,26 @@ const BlockFixed = ({repair}) => {
         user_id: 0,
         price: undefined,
         solution_description: '',
-        is_fixed: true,
+        is_fixed: 0,
     });
     const {mutate, isPending, isSuccess, error} = useMutationFixed();
 
-    const [selected, setSelected] = useState(false);
+    const [selected, setSelected] = useState(0);
     const [confirmOpen, setConfirmOpen] = useState(false);
     const [modalOpen, setModalOpen] = useState(false);
 
     useEffect(() => {
-        setSelected(!!repair[field]);
-    }, []);
+        setSelected(repair[field]);
+    }, [repair[field], selected]);
 
     useEffect(() => {
         if (isSuccess) {
-            setModalOpen(false);
-            setSelected(!selected);
+            setSelected(data[field]);
         }
     }, [isSuccess]);
 
     const handleField = async () => {
-        if (!repair[field]) {
+        if (repair[field] === 0) {
             setModalOpen(true);
         } else {
             setConfirmOpen(true);
@@ -60,8 +60,8 @@ const BlockFixed = ({repair}) => {
         await handleSave();
     }
 
-    const handleSave = async () => {
-        mutate({id: repair.id, props: {...data, [field]: true}});
+    const handleSave = async (state) => {
+        mutate({id: repair.id, props: {...data, [field]: state}});
     }
 
     return (
@@ -71,27 +71,31 @@ const BlockFixed = ({repair}) => {
                     <Box>
                         <TextField value={data.solution_description}
                                    onChange={(e) => setData({...data, 'solution_description': e.target.value})}
-                                   sx={{width: '100%'}} id="outlined-basic" label="Result of repair"
+                                   sx={{width: '100%'}}
+                                   id="solution_description"
+                                   label="Result of repair"
                                    error={!!error?.solution_description}
                                    helperText={error?.solution_description}
                                    variant="outlined"/>
                     </Box>
                     <Box>
                         <TextField value={data.price}
+                                   id="price"
                                    type={'number'}
                                    min={0}
                                    error={!!error?.price}
                                    helperText={error?.price}
                                    onChange={(e) => setData({...data, 'price': e.target.value})}
-                                   sx={{width: '100%'}} id="outlined-basic" label="Price"
+                                   sx={{width: '100%'}}
+                                   label="Price"
                                    variant="outlined"/>
                     </Box>
                     {employees.length &&
                         <FormControl fullWidth>
                             <InputLabel id="demo-simple-select-label">Employee</InputLabel>
                             <Select
-                                labelId="demo-simple-select-label"
-                                id="demo-simple-select"
+                                labelId="employee"
+                                id="employee"
                                 value={data.user_id || 0}
                                 label="Employee"
                                 error={!!error?.user_id}
@@ -110,7 +114,10 @@ const BlockFixed = ({repair}) => {
                         <Box sx={{display: 'flex', gap: 3}}>
                             <LoadingButton color='success' disabled={!data.user_id} loading={isPending}
                                            variant="contained"
-                                           onClick={handleSave}>Save</LoadingButton>
+                                           onClick={()=> handleSave(1)}>Fixed</LoadingButton>
+                            <LoadingButton color='success' disabled={!data.user_id} loading={isPending}
+                                           variant="contained"
+                                           onClick={()=> handleSave(2)}>Not fixed</LoadingButton>
                             {/*<LoadingButton color='success' disabled={!data.user_id} loading={processing}*/}
                             {/*               variant="contained"*/}
                             {/*               onClick={handleSaveAndSendSMS}>Save and send SMS</LoadingButton>*/}
@@ -136,12 +143,14 @@ const BlockFixed = ({repair}) => {
                 variant="text"
                 onClick={handleField}
             >
-                {selected ? <Box sx={{
+                {selected === 1 && <Box sx={{
                     display: 'flex',
                     flexDirection: 'column',
                     gap: 1,
                     alignItems: 'center'
-                }}><CheckIcon/> {repair.user?.name}</Box> : <RemoveIcon/>}
+                }}><CheckIcon/> {repair.user?.name}</Box>}
+                {selected === 2 && <ClearIcon/>}
+                {selected === 0 && <RemoveIcon/>}
             </LoadingButton>
         </>
 

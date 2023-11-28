@@ -12,6 +12,7 @@ use App\Http\Requests\RepairUpdateRequest;
 use App\Models\Repair;
 use App\Models\User;
 use Inertia\Inertia;
+use Spatie\QueryBuilder\AllowedFilter;
 use Spatie\QueryBuilder\QueryBuilder;
 
 class RepairController extends Controller
@@ -19,11 +20,15 @@ class RepairController extends Controller
     public function index()
     {
 
-        $repairs = QueryBuilder::for(Repair::class)->with(['user', 'whoOrdered'])->allowedFilters(['is_fixed', 'is_ordered_component', 'is_picked_up', 'is_called'])->orderBy('created_at', 'DESC');
-        if(request()->has('search')){
+        $repairs = QueryBuilder::for(Repair::class)->with(['user', 'whoOrdered'])->allowedFilters([
+            'is_fixed', 'is_ordered_component', 'is_picked_up', 'is_called',
+            AllowedFilter::scope('need_order'),
+            AllowedFilter::scope('need_call'),
+        ])->orderBy('created_at', 'DESC');
+        if (request()->has('search')) {
             $search = request()->query('search');
             $repairs->orWhere('id', $search);
-//            $repairs->orWhere('customer_phone', 'LIKE', "%{$search}%");
+            $repairs->orWhere('customer_phone', 'LIKE', "%{$search}%");
         }
         $repairs = $repairs->paginate(20);
         $employees = User::where('role', 'employee')->where('access', true)->get();
@@ -152,7 +157,11 @@ class RepairController extends Controller
 
     public function counterFilters(): \Illuminate\Http\JsonResponse
     {
-        $repairs = QueryBuilder::for(Repair::class)->with(['user', 'whoOrdered'])->allowedFilters(['is_fixed', 'is_ordered_component', 'is_picked_up', 'is_called'])->count();
+        $repairs = QueryBuilder::for(Repair::class)->with(['user', 'whoOrdered'])->allowedFilters([
+            'is_fixed', 'is_ordered_component', 'is_picked_up', 'is_called',
+            AllowedFilter::scope('need_order'),
+            AllowedFilter::scope('need_call'),
+        ])->count();
         return response()->json([
             'total' => $repairs
         ]);
