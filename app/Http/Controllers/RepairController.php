@@ -27,8 +27,12 @@ class RepairController extends Controller
         ])->orderBy('created_at', 'DESC');
         if (request()->has('search')) {
             $search = request()->query('search');
-            $repairs->orWhere('id', $search);
-            $repairs->orWhere('customer_phone', 'LIKE', "%{$search}%");
+            if (is_numeric($search)) {
+                $repairs->orWhere('id', $search);
+            }
+            if (!is_numeric($search) || strlen($search) > 3 && is_numeric($search)) {
+                $repairs->orWhere('customer_phone', 'LIKE', "%" . $search . "%");
+            }
         }
         $repairs = $repairs->paginate(20);
         $employees = User::where('role', 'employee')->where('access', true)->get();
