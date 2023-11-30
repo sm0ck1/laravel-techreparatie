@@ -112,12 +112,16 @@ const Repairs = ({repairs, employees, groupWhereOrdered, groupDevices}) => {
                 }}>
                     <Paper
                         component="form"
+                        onSubmit={(e) => {
+                            e.preventDefault();
+                            router.get('/repairs?search=' + search);
+                        }}
                         sx={{p: '2px 4px', display: 'flex', alignItems: 'center', width: 400}}
                     >
                         <InputBase
                             sx={{ml: 1, flex: 1}}
-                            placeholder="Search customer, invoice and etc"
-                            inputProps={{'aria-label': 'Search customer, invoice and etc'}}
+                            placeholder="Search ID or customer phone"
+                            inputProps={{'aria-label': 'Search ID or customer phone'}}
                             value={search || ''}
                             onChange={(e) => setSearch(e.target.value)}
                         />

@@ -1,10 +1,9 @@
 import React from 'react';
 import {Head, router, usePage} from "@inertiajs/react";
-import {AppBar, Avatar, Box, Button, IconButton, Menu, MenuItem, Toolbar, Tooltip, Typography} from "@mui/material";
+import {AppBar, Box, Button, IconButton, Menu, MenuItem, Toolbar, Typography} from "@mui/material";
 import Container from '@mui/material/Container';
-import AdbIcon from '@mui/icons-material/Adb';
 import MenuIcon from '@mui/icons-material/Menu';
-// import HeaderMenu from "@/Pages/Components/HeaderMenu.jsx";
+import LogoutIcon from '@mui/icons-material/Logout';
 
 const DashboardLayout = ({header, children, submenu = null}) => {
     const {auth} = usePage().props
@@ -35,10 +34,7 @@ const DashboardLayout = ({header, children, submenu = null}) => {
     };
 
     const pages = [
-        {
-            key: 'dashboard',
-            label: `Dashboard`,
-        },
+
         {
             key: 'repairs.index',
             label: "Repairs"
@@ -48,8 +44,8 @@ const DashboardLayout = ({header, children, submenu = null}) => {
             label: "Employees"
         },
         {
-            key: 4,
-            label: "Settings"
+            key: 'profile.edit',
+            label: "Profile"
         },
     ];
 
@@ -76,7 +72,9 @@ const DashboardLayout = ({header, children, submenu = null}) => {
                                 display: {xs: 'none', md: 'flex'},
                             }}
                         >
-                            <img width="100" src="https://www.techreparatie.nl/wp-content/uploads/2021/02/techreparatie.png" alt=""/>
+                            <img width="100"
+                                 src="https://www.techreparatie.nl/wp-content/uploads/2021/02/techreparatie.png"
+                                 alt=""/>
                         </Box>
 
                         <Box sx={{flexGrow: 1, display: {xs: 'flex', md: 'none'}}}>
@@ -123,7 +121,9 @@ const DashboardLayout = ({header, children, submenu = null}) => {
                                 width: '100px',
                             }}
                         >
-                            <img width="100" src="https://www.techreparatie.nl/wp-content/uploads/2021/02/techreparatie.png" alt=""/>
+                            <img width="100"
+                                 src="https://www.techreparatie.nl/wp-content/uploads/2021/02/techreparatie.png"
+                                 alt=""/>
                         </Typography>
 
                         <Box sx={{flexGrow: 1, display: {xs: 'none', md: 'flex'}}}>
@@ -141,36 +141,11 @@ const DashboardLayout = ({header, children, submenu = null}) => {
                         </Box>
 
                         <Box sx={{flexGrow: 0}}>
-                            <Tooltip title="Open settings">
-                                <IconButton onClick={handleOpenUserMenu} sx={{p: 0}}>
-                                    <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg"/>
-                                </IconButton>
-                            </Tooltip>
-                            <Menu
-                                sx={{mt: '45px'}}
-                                id="menu-appbar"
-                                anchorEl={anchorElUser}
-                                anchorOrigin={{
-                                    vertical: 'top',
-                                    horizontal: 'right',
-                                }}
-                                keepMounted
-                                transformOrigin={{
-                                    vertical: 'top',
-                                    horizontal: 'right',
-                                }}
-                                open={Boolean(anchorElUser)}
-                                onClose={handleCloseUserMenu}
-                            >
-                                {settings.map((setting) => (
-                                    <MenuItem key={setting.key} onClick={() => handleCloseNavMenu(setting.key)}>
-                                        <Typography textAlign="center">{setting.label}</Typography>
-                                    </MenuItem>
-                                ))}
-                                <MenuItem key='logout' onClick={logout}>
-                                    <Typography textAlign="center">Logout</Typography>
-                                </MenuItem>
-                            </Menu>
+                            <Button
+                                sx={{my: 2, color: 'white', display: 'block', '&:disabled': {color: 'white'}}}
+                                onClick={logout}>
+                                <LogoutIcon/>
+                            </Button>
                         </Box>
                     </Toolbar>
                 </Container>

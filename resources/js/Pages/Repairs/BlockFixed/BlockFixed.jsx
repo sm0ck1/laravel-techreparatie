@@ -36,6 +36,7 @@ const BlockFixed = ({repair}) => {
     useEffect(() => {
         if (isSuccess) {
             setSelected(data[field]);
+            setModalOpen(false);
         }
     }, [isSuccess]);
 
@@ -149,7 +150,7 @@ const BlockFixed = ({repair}) => {
                     gap: 1,
                     alignItems: 'center'
                 }}><CheckIcon/> {repair.user?.name}</Box>}
-                {selected === 2 && <ClearIcon/>}
+                {selected === 2 && "Not fixed"}
                 {selected === 0 && <RemoveIcon/>}
             </LoadingButton>
         </>
