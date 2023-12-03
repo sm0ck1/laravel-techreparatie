@@ -17,3 +17,5 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('result_of_repair', [App\Http\Controllers\RepairController::class, 'resultOfRepair']);

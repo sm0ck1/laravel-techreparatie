@@ -17,6 +17,26 @@ use Spatie\QueryBuilder\QueryBuilder;
 
 class RepairController extends Controller
 {
+
+    //find result of repair for id and customer phone and return only status
+    public function resultOfRepair()
+    {
+        $repair = Repair::where('is_picked_up', 0)->where(function ($builder){
+            $builder->where('id', request()->query('number'))->orWhere('customer_phone', request()->query('phone'));
+        })->first();
+        if ($repair) {
+            return response()->json([
+                'message' => 'Repair found',
+                'res'     => $repair->only(['is_fixed', 'is_ordered_component', 'component'])
+            ]);
+        }
+        return response()->json([
+            'message' => 'Repair not found',
+            'res'     => $repair
+        ]);
+
+    }
+
     public function index()
     {
 
@@ -34,7 +54,7 @@ class RepairController extends Controller
                 $repairs->orWhere('customer_phone', 'LIKE', "%" . $search . "%");
             }
         }
-        $repairs = $repairs->paginate(20);
+        $repairs = $repairs->paginate(50);
         $employees = User::where('role', 'employee')->where('access', true)->get();
         $groupWhereOrdered = Repair::whereNotNull('where_ordered')->groupBy('where_ordered')->get(['where_ordered']);
         $groupDevices = Repair::whereNotNull('device')->groupBy('device')->get(['device']);
