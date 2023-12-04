@@ -11,6 +11,7 @@ use App\Http\Requests\RepairStoreRequest;
 use App\Http\Requests\RepairUpdateRequest;
 use App\Models\Repair;
 use App\Models\User;
+use Illuminate\Support\Facades\DB;
 use Inertia\Inertia;
 use Spatie\QueryBuilder\AllowedFilter;
 use Spatie\QueryBuilder\QueryBuilder;
@@ -18,21 +19,31 @@ use Spatie\QueryBuilder\QueryBuilder;
 class RepairController extends Controller
 {
 
-    //find result of repair for id and customer phone and return only status
+    //find result of repair for id and customer phone then return only statuses
     public function resultOfRepair()
     {
-        $repair = Repair::where('is_picked_up', 0)->where(function ($builder){
-            $builder->where('id', request()->query('number'))->orWhere('customer_phone', request()->query('phone'));
-        })->first();
-        if ($repair) {
+        //convert this query in laravel syntacsis
+        $query = preg_replace('/[^+0-9]/', '', request()->query('number'));
+
+        if (substr($query, 0, 1) == 0 || substr($query, 0, 1) == '+') {
+            $result = DB::table(DB::raw('(SELECT `id`, `is_fixed`, `is_ordered_component`, `component`, REGEXP_REPLACE(`customer_phone`, \'[^0-9]\', \'\') AS `phone_formatted` FROM `repairs`) as result'))
+                ->select(['id', 'is_fixed', 'is_ordered_component', 'component'])
+                ->where('is_picked_up', 0)
+                ->where('phone_formatted', '=', $query)
+                ->get();
+        } else {
+            $result = Repair::select(['id', 'is_fixed', 'is_ordered_component', 'component'])->where('is_picked_up', 0)->where('id', $query)->get();
+        }
+
+        if ($result) {
             return response()->json([
                 'message' => 'Repair found',
-                'res'     => $repair->only(['is_fixed', 'is_ordered_component', 'component'])
+                'res'     => $result
             ]);
         }
         return response()->json([
             'message' => 'Repair not found',
-            'res'     => $repair
+            'res'     => $result
         ]);
 
     }
