@@ -26,7 +26,7 @@ class RepairController extends Controller
         $query = preg_replace('/[^+0-9]/', '', request()->query('number'));
 
         if (substr($query, 0, 1) == 0 || substr($query, 0, 1) == '+') {
-            $result = DB::table(DB::raw('(SELECT `id`, `is_fixed`, `is_ordered_component`, `component`, `device`, REGEXP_REPLACE(`customer_phone`, \'[^0-9]\', \'\') AS `phone_formatted` FROM `repairs`) as result'))
+            $result = DB::table(DB::raw('(SELECT `id`, `is_fixed`, `is_ordered_component`, `component`, `device`, `is_picked_up`, REGEXP_REPLACE(`customer_phone`, \'[^0-9]\', \'\') AS `phone_formatted` FROM `repairs`) as result'))
                 ->select(['id', 'is_fixed', 'is_ordered_component', 'component', 'device'])
                 ->where('is_picked_up', 0)
                 ->where('phone_formatted', '=', $query)
