@@ -26,13 +26,13 @@ class RepairController extends Controller
         $query = preg_replace('/[^+0-9]/', '', request()->query('number'));
 
         if (substr($query, 0, 1) == 0 || substr($query, 0, 1) == '+') {
-            $result = DB::table(DB::raw('(SELECT `id`, `is_fixed`, `is_ordered_component`, `component`, REGEXP_REPLACE(`customer_phone`, \'[^0-9]\', \'\') AS `phone_formatted` FROM `repairs`) as result'))
-                ->select(['id', 'is_fixed', 'is_ordered_component', 'component'])
+            $result = DB::table(DB::raw('(SELECT `id`, `is_fixed`, `is_ordered_component`, `component`, `device`, REGEXP_REPLACE(`customer_phone`, \'[^0-9]\', \'\') AS `phone_formatted` FROM `repairs`) as result'))
+                ->select(['id', 'is_fixed', 'is_ordered_component', 'component', 'device'])
                 ->where('is_picked_up', 0)
                 ->where('phone_formatted', '=', $query)
                 ->get();
         } else {
-            $result = Repair::select(['id', 'is_fixed', 'is_ordered_component', 'component'])->where('is_picked_up', 0)->where('id', $query)->get();
+            $result = Repair::select(['id', 'is_fixed', 'is_ordered_component', 'component', 'device'])->where('is_picked_up', 0)->where('id', $query)->get();
         }
 
         if ($result) {
@@ -61,7 +61,7 @@ class RepairController extends Controller
             if (is_numeric($search)) {
                 $repairs->orWhere('id', $search);
             }
-            if (!is_numeric($search) || strlen($search) > 3 && is_numeric($search)) {
+            if (substr($search, 0, 1) == 0 || substr($search, 0, 1) == '+') {
                 $repairs->orWhere('customer_phone', 'LIKE', "%" . $search . "%");
             }
         }

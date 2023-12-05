@@ -132,6 +132,6 @@ class Repair extends Model
             $builder->where('is_called', 0)
                 ->orWhere('is_called', 2);
 //                ->orWhereDate('date_called', '>=', Carbon::now()->addDay()->format('Y-m-d 00:00:00'));
-        })->where('is_fixed', 1)->where('is_picked_up', 0);
+        })->where('is_fixed', '>', 0)->where('is_picked_up', 0);
     }
 }
