@@ -9,7 +9,7 @@ import {QueryClient, QueryClientProvider,} from '@tanstack/react-query'
 
 const queryClient = new QueryClient()
 
-const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
+const appName = 'Techreparatie';
 
 createInertiaApp({
     title: (title) => `${title} - ${appName}`,

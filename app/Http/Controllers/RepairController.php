@@ -11,7 +11,6 @@ use App\Http\Requests\RepairStoreRequest;
 use App\Http\Requests\RepairUpdateRequest;
 use App\Models\Repair;
 use App\Models\User;
-use Illuminate\Support\Facades\DB;
 use Inertia\Inertia;
 use Spatie\QueryBuilder\AllowedFilter;
 use Spatie\QueryBuilder\QueryBuilder;
@@ -22,14 +21,12 @@ class RepairController extends Controller
     //find result of repair for id and customer phone then return only statuses
     public function resultOfRepair()
     {
-        //convert this query in laravel syntacsis
         $query = preg_replace('/[^+0-9]/', '', request()->query('number'));
 
         if (substr($query, 0, 1) == 0 || substr($query, 0, 1) == '+') {
-            $result = DB::table(DB::raw('(SELECT `id`, `is_fixed`, `is_ordered_component`, `component`, `device`, `is_picked_up`, REGEXP_REPLACE(`customer_phone`, \'[^0-9]\', \'\') AS `phone_formatted` FROM `repairs`) as result'))
+            $result = Repair::whereRaw("REGEXP_REPLACE(`customer_phone`, '[^0-9]', '') = ?", [$query])
                 ->select(['id', 'is_fixed', 'is_ordered_component', 'component', 'device'])
                 ->where('is_picked_up', 0)
-                ->where('phone_formatted', '=', $query)
                 ->get();
         } else {
             $result = Repair::select(['id', 'is_fixed', 'is_ordered_component', 'component', 'device'])->where('is_picked_up', 0)->where('id', $query)->get();
@@ -51,20 +48,21 @@ class RepairController extends Controller
     public function index()
     {
 
-        $repairs = QueryBuilder::for(Repair::class)->with(['user', 'whoOrdered'])->allowedFilters([
+        $repairs = QueryBuilder::for(Repair::class)->with(['user', 'whoOrdered']);
+        if (request()->has('search')) {
+            $query = preg_replace('/[^+0-9]/', '', request()->query('search'));
+            if (substr(request()->query('search'), 0, 1) == '-') {
+                $repairs->where('id', $query);
+            } else {
+                $repairs->whereRaw("REGEXP_REPLACE(`customer_phone`, '[^0-9]', '') LIKE ?", ["%{$query}%"]);
+            }
+        }
+        $repairs->allowedFilters([
             'is_fixed', 'is_ordered_component', 'is_picked_up', 'is_called',
             AllowedFilter::scope('need_order'),
             AllowedFilter::scope('need_call'),
         ])->orderBy('created_at', 'DESC');
-        if (request()->has('search')) {
-            $search = request()->query('search');
-            if (is_numeric($search)) {
-                $repairs->orWhere('id', $search);
-            }
-            if (substr($search, 0, 1) == 0 || substr($search, 0, 1) == '+') {
-                $repairs->orWhere('customer_phone', 'LIKE', "%" . $search . "%");
-            }
-        }
+
         $repairs = $repairs->paginate(50);
         $employees = User::where('role', 'employee')->where('access', true)->get();
         $groupWhereOrdered = Repair::whereNotNull('where_ordered')->groupBy('where_ordered')->get(['where_ordered']);

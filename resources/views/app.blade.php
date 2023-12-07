@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="initial-scale=1, width=device-width" />
 
-        <title inertia>{{ config('app.name', 'Laravel') }}</title>
+        <title inertia>{{ config('app.name', 'Techreparatie') }}</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />

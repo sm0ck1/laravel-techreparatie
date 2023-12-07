@@ -45,7 +45,7 @@ const DashboardLayout = ({header, children, submenu = null}) => {
         },
         {
             key: 'profile.edit',
-            label: "Profile"
+            label: auth.user.name
         },
     ];
 

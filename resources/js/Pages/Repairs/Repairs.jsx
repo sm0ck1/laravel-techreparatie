@@ -14,22 +14,37 @@ import {
     Divider,
     IconButton,
     InputBase,
+    Pagination,
+    Popover,
     Table,
     TableBody,
+    Typography,
 } from "@mui/material";
 import Row from "@/Pages/Repairs/Components/Row.jsx";
 import ModalEdit from "@/Pages/Repairs/Components/ModalEdit.jsx";
 import ModalAdd from "@/Pages/Repairs/Components/ModalCreate.jsx";
 import {repairStore} from "@/shared/store/repairStore.js";
 import {Link, router} from "@inertiajs/react";
-import {Pagination} from '@mui/material'
 import queryString from 'query-string';
 import Paper from "@mui/material/Paper";
 import SearchIcon from '@mui/icons-material/Search';
 import CloseIcon from '@mui/icons-material/Close';
+import QuestionMarkIcon from '@mui/icons-material/QuestionMark';
 
 
 const Repairs = ({repairs, employees, groupWhereOrdered, groupDevices}) => {
+
+    const [anchorEl, setAnchorEl] = React.useState(null);
+
+    const handlePopoverOpen = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+
+    const handlePopoverClose = () => {
+        setAnchorEl(null);
+    };
+    const openPopover = Boolean(anchorEl);
+
     const [openCreateModal, setOpenCreateModal] = React.useState(false);
     const [open, setOpen] = React.useState(false);
     const [search, setSearch] = React.useState('');
@@ -105,11 +120,12 @@ const Repairs = ({repairs, employees, groupWhereOrdered, groupDevices}) => {
                         New repair
                     </Button>
                 </Box>
-                <Box sx={{
-                    display: 'flex',
-                    flexDirection: 'row',
-                    gap: 2,
-                }}>
+                <Box
+                    sx={{
+                        display: 'flex',
+                        flexDirection: 'row',
+                        gap: 2,
+                    }}>
                     <Paper
                         component="form"
                         onSubmit={(e) => {
@@ -118,6 +134,18 @@ const Repairs = ({repairs, employees, groupWhereOrdered, groupDevices}) => {
                         }}
                         sx={{p: '2px 4px', display: 'flex', alignItems: 'center', width: 400}}
                     >
+                        <>
+
+                            <IconButton color="primary" sx={{p: '10px'}}
+                                        aria-owns={openPopover ? 'mouse-over-popover' : undefined}
+                                        aria-haspopup="true"
+                                        onMouseEnter={handlePopoverOpen}
+                                        onMouseLeave={handlePopoverClose}
+                            >
+                                <QuestionMarkIcon/>
+                            </IconButton>
+                            <Divider sx={{height: 28, m: 0.5}} orientation="vertical"/>
+                        </>
                         <InputBase
                             sx={{ml: 1, flex: 1}}
                             placeholder="Search ID or customer phone"
@@ -157,7 +185,28 @@ const Repairs = ({repairs, employees, groupWhereOrdered, groupDevices}) => {
                         })}
                     </ButtonGroup>
                 </Box>
+
             </Box>
+            <Popover
+                id="mouse-over-popover"
+                sx={{
+                    pointerEvents: 'none',
+                }}
+                open={openPopover}
+                anchorEl={anchorEl}
+                anchorOrigin={{
+                    vertical: 'bottom',
+                    horizontal: 'left',
+                }}
+                transformOrigin={{
+                    vertical: 'top',
+                    horizontal: 'left',
+                }}
+                onClose={handlePopoverClose}
+                disableRestoreFocus
+            >
+                <Typography sx={{p: 1}}>Search ID Example: -325 (first symbol must be -)</Typography>
+            </Popover>
             {repairs.data.length > 0 && (
                 <>
                     <TableContainer>
