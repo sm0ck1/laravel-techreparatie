@@ -54,7 +54,7 @@ const Repairs = ({repairs, employees, groupWhereOrdered, groupDevices}) => {
         {name: 'Need fix', url: '?filter[is_fixed]=0&filter[is_ordered_component]=0'},
         {name: 'Need order', url: '?filter[need_order]=1'},
         {name: 'Awaits order', url: '?filter[is_fixed]=0&filter[is_ordered_component]=1&filter[is_picked_up]=0'},
-        {name: 'Not pick up', url: '?filter[is_picked_up]=0&filter[is_fixed]=1'},
+        {name: 'Not pick up', url: '?filter[is_picked_up]=0&filter[is_fixed]=1,2'},
     ]);
 
     useEffect(() => {
