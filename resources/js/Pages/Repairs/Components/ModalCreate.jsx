@@ -54,6 +54,10 @@ const ModalCreate = ({open, handleClose}) => {
         handleClose();
     };
 
+    useEffect(() => {
+        console.log(form.data.device);
+    }, [form.data]);
+
     return (
         <ModalMui open={open} onClose={handleCloseModal} title='New repair' width='md'>
             <BlockDivider title='Customer'>
@@ -66,11 +70,14 @@ const ModalCreate = ({open, handleClose}) => {
                     fullWidth
                     freeSolo
                     options={groupDevices.map((option) => option.device)}
+                    defaultValue={form.data.device || ''}
+                    onInputChange={(event, newInputValue) => {
+                        form.setData('device', newInputValue);
+                    }}
                     renderInput={(params) => <TextField
                         error={!!form.errors?.device}
                         helperText={form.errors?.device}
                         value={form.data.device || ''}
-                        onChange={(e) => form.setData('device', e.target.value)}
                         {...params}
                         label="Device"/>
                     }

@@ -10,7 +10,7 @@ class UserController extends Controller
 {
     public function index(Request $request)
     {
-        $users = User::where('role', 'employee')->get();
+        $users = User::all();
         return Inertia::render('Users/Users', [
             'users' => $users
         ]);

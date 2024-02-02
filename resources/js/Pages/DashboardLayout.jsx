@@ -40,7 +40,7 @@ const DashboardLayout = ({header, children, submenu = null}) => {
             label: "Repairs"
         },
         {
-            key: 3,
+            key: 'employees.index',
             label: "Employees"
         },
         {

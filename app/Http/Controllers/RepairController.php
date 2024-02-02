@@ -199,4 +199,18 @@ class RepairController extends Controller
             'total' => $repairs
         ]);
     }
+
+    public function delete(Repair $repair)
+    {
+        if ($repair->delete()) {
+            return response()->json([
+                'message' => 'Repair deleted successfully',
+                'res'     => $repair
+            ]);
+        }
+        return response()->json([
+            'message' => 'Repair deleted failed',
+            'res'     => $repair
+        ]);
+    }
 }

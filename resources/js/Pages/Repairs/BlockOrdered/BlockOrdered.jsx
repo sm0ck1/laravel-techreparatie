@@ -152,11 +152,13 @@ const BlockOrdered = ({repair}) => {
                             id="where_ordered"
                             freeSolo
                             options={groupWhereOrdered.map((option) => option.where_ordered)}
+                            onInputChange={(event, newInputValue) => {
+                                setData({...data, 'where_ordered': newInputValue})
+                            }}
                             renderInput={(params) => <TextField
                                 error={!!error?.where_ordered}
                                 helperText={error?.where_ordered}
                                 value={data.where_ordered || ''}
-                                onChange={(e) => setData({...data, 'where_ordered': e.target.value})}
                                 {...params}
                                 label="Where ordered"/>
                             }

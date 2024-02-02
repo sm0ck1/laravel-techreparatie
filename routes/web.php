@@ -45,6 +45,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/repairs', [RepairController::class, 'store'])->name('repairs.store');
     Route::get('/repairs/counter', [RepairController::class, 'counterFilters'])->name('repairs.counterFilters');
     Route::patch('/repairs/{repair}', [RepairController::class, 'update'])->name('repairs.update');
+    Route::delete('/repairs/{repair}', [RepairController::class, 'delete'])->name('repairs.delete');
     Route::patch('/repairs/{repair}/ordered', [RepairController::class, 'updateOrdered'])->name('repairs.update.ordered');
     Route::patch('/repairs/{repair}/fixed', [RepairController::class, 'updateFixed'])->name('repairs.update.fixed');
     Route::patch('/repairs/{repair}/called', [RepairController::class, 'updateCalled'])->name('repairs.update.called');
@@ -53,7 +54,7 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::middleware('auth')->group(function (){
-    Route::get('/users', [\App\Http\Controllers\UserController::class, 'index'])->name('users.index');
+    Route::get('/users', [\App\Http\Controllers\UserController::class, 'index'])->name('employees.index');
 });
 
 require __DIR__.'/auth.php';
