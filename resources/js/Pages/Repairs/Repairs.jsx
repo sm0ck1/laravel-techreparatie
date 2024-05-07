@@ -30,6 +30,7 @@ import Paper from "@mui/material/Paper";
 import SearchIcon from '@mui/icons-material/Search';
 import CloseIcon from '@mui/icons-material/Close';
 import QuestionMarkIcon from '@mui/icons-material/QuestionMark';
+import PrintOrder from "@/Pages/Repairs/Components/PrintOrder.jsx";
 
 
 const Repairs = ({repairs, employees, groupWhereOrdered, groupDevices}) => {
@@ -99,6 +100,7 @@ const Repairs = ({repairs, employees, groupWhereOrdered, groupDevices}) => {
             backgroundColor: '#719ef8',
         },
     };
+
     return (
         <RepairsLayout>
             <ModalAdd open={openCreateModal} handleClose={handleCloseCreateModal}/>

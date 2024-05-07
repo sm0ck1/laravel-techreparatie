@@ -25,6 +25,7 @@ class RepairStoreRequest extends FormRequest
             'customer_name' => 'required|string',
             'customer_phone' => 'required|string',
             'device' => 'required|string',
+            'note' => 'nullable|string',
             'problem_description' => 'required|string',
         ];
     }

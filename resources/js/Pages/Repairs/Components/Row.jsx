@@ -12,11 +12,13 @@ import BlockCalled from "@/Pages/Repairs/BlockCalled/BlockCalled.jsx";
 import {dateCreate} from "@/shared/helpers/formatDate.js";
 import {blue} from "@mui/material/colors";
 import BlockDiagnostic from "@/Pages/Repairs/BlockDiagnostic/BlockDiagnostic.jsx";
+import PrintOrder from "@/Pages/Repairs/Components/PrintOrder.jsx";
 
 const Row = ({repair, open, setOpen}) => {
 
     return (
         <>
+
             <TableRow
                 key={repair.id}
                 sx={{

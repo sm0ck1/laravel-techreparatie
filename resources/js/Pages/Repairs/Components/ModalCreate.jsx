@@ -54,10 +54,6 @@ const ModalCreate = ({open, handleClose}) => {
         handleClose();
     };
 
-    useEffect(() => {
-        console.log(form.data.device);
-    }, [form.data]);
-
     return (
         <ModalMui open={open} onClose={handleCloseModal} title='New repair' width='md'>
             <BlockDivider title='Customer'>
@@ -87,12 +83,21 @@ const ModalCreate = ({open, handleClose}) => {
                            props={{fullWidth: true}}/>
             </BlockDivider>
             <BlockDivider title='Note'>
-                <TextField fullWidth multiline label="Note" variant="standard"/>
+                <TextField value={form.data.note || ''}
+                           onChange={(e) => form.setData('note', e.target.value)}
+                           fullWidth
+                           id="outlined-basic" label="Note"
+                           error={!!form.error?.note}
+                           helperText={form.error?.note}
+                           variant="outlined"/>
             </BlockDivider>
             <Box sx={{display: 'flex', gap: 5, flexDirection: 'row'}}>
                 <LoadingButton fullWidth size='large' color='success' loading={disable}
                                variant="contained"
                                onClick={handleSave}>Save</LoadingButton>
+                <LoadingButton fullWidth size='large' color='success' loading={disable}
+                               variant="contained"
+                               onClick={handleSave}>Save and Print</LoadingButton>
                 <Button fullWidth variant="contained" onClick={handleCloseModal}>Cancel</Button>
             </Box>
         </ModalMui>
