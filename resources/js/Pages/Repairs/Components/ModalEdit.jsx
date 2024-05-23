@@ -21,6 +21,7 @@ const ModalEdit = () => {
     const [data, setData] = useState({
         customer_name: "",
         customer_phone: "",
+        customer_email: "",
         device: "",
         problem_description: "",
         component: "",
@@ -87,7 +88,13 @@ const ModalEdit = () => {
                                error={!!error?.customer_phone}
                                helperText={error?.customer_phone}
                                variant="outlined"/>
-
+                    <TextField value={data.customer_email || ''}
+                               onChange={(e) => setData({...data, 'customer_email': e.target.value})}
+                               fullWidth
+                               id="outlined-basic" label="Email"
+                               error={!!error?.customer_email}
+                               helperText={error?.customer_email}
+                               variant="outlined"/>
                 </BlockDivider>
                 <BlockDivider title='Device'>
                     <Autocomplete

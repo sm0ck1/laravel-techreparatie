@@ -75,7 +75,7 @@ const PrintOrder = React.forwardRef(({repair}, ref) => {
                     </Box>
                     <Box>Naam: {repair.customer_name}</Box>
                     <Box>Telefoon: {repair.customer_phone}</Box>
-                    <Box>Email: _________________________________</Box>
+                    <Box>Email: {repair.customer_email || '_______________________________________'}</Box>
                 </Box>
                 <Box
                     sx={{

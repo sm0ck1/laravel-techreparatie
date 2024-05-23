@@ -18,6 +18,7 @@ const ModalCreate = ({open, handleClose}) => {
     const form = useForm({
         customer_name: "",
         customer_phone: "",
+        customer_email: "",
         device: "",
         problem_description: "",
         component: "",
@@ -59,6 +60,7 @@ const ModalCreate = ({open, handleClose}) => {
             <BlockDivider title='Customer'>
                 <InputText label='Name' form={form} name='customer_name' props={{fullWidth: true}}/>
                 <InputText label='Phone' form={form} name='customer_phone' props={{fullWidth: true}}/>
+                <InputText label='Email' form={form} name='customer_email' props={{fullWidth: true}}/>
             </BlockDivider>
             <BlockDivider title='Device'>
                 <Autocomplete
@@ -95,9 +97,6 @@ const ModalCreate = ({open, handleClose}) => {
                 <LoadingButton fullWidth size='large' color='success' loading={disable}
                                variant="contained"
                                onClick={handleSave}>Save</LoadingButton>
-                <LoadingButton fullWidth size='large' color='success' loading={disable}
-                               variant="contained"
-                               onClick={handleSave}>Save and Print</LoadingButton>
                 <Button fullWidth variant="contained" onClick={handleCloseModal}>Cancel</Button>
             </Box>
         </ModalMui>
