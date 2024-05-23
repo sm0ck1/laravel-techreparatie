@@ -22,6 +22,14 @@ const BlockInfoCustomer = ({repair}) => {
                     readOnly: true,
                 }}
             />
+            <TextField
+                size='small'
+                label="Customer email"
+                defaultValue={repair.customer_email}
+                InputProps={{
+                    readOnly: true,
+                }}
+            />
             {!!repair.is_called && (
                 <TextField
                     color={compareWithCurrentTime(repair.date_called) > 1 && !repair.is_picked_up ? 'warning' : 'success'}
