@@ -1,1 +1,0 @@
-import{j as r}from"./app-2228c071.js";import{B as s}from"./Box-742bb19f.js";import"./createTheme-dcf84243.js";import"./extendSxProp-a075ea99.js";const p=({access:o})=>r.jsx(s,{children:o?"Yes":"No"});export{p as default};

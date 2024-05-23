@@ -1,0 +1,1 @@
+import{g as t}from"./generateUtilityClasses-8dbd3f78.js";import{g as e}from"./styled-fe7b6d34.js";function a(i){return e("MuiDivider",i)}const r=t("MuiDivider",["root","absolute","fullWidth","inset","middle","flexItem","light","vertical","withChildren","withChildrenVertical","textAlignRight","textAlignLeft","wrapper","wrapperVertical"]),d=r;export{d,a as g};
