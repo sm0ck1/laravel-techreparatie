@@ -17,9 +17,7 @@ class OrderDone extends Mailable implements ShouldQueue
     /**
      * Create a new message instance.
      */
-    public function __construct(protected Repair $repair)
-    {
-    }
+    public function __construct(protected Repair $repair) {}
 
     /**
      * Get the message envelope.

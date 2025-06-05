@@ -22,7 +22,7 @@ class UpdateUserRequest extends FormRequest
     public function rules(): array
     {
         $fields = [];
-        if ($this->input('password') && $this->input('password_confirmation')){
+        if ($this->input('password') && $this->input('password_confirmation')) {
             $fields = [
                 'password' => ['required', 'string', 'min:8', 'confirmed'],
             ];

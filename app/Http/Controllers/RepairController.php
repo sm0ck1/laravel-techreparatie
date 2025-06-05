@@ -19,7 +19,7 @@ use Spatie\QueryBuilder\QueryBuilder;
 
 class RepairController extends Controller
 {
-    //find result of repair for id and customer phone then return only statuses
+    // find result of repair for id and customer phone then return only statuses
     public function resultOfRepair()
     {
         $query = preg_replace('/[^+0-9]/', '', request()->query('number'));
@@ -78,10 +78,10 @@ class RepairController extends Controller
         ]);
     }
 
-    //Store repair
+    // Store repair
     public function store(RepairStoreRequest $request)
     {
-        $repair = new Repair();
+        $repair = new Repair;
         $repair->fill($request->all());
         $repair->save();
     }
