@@ -17,23 +17,23 @@ class RepairFactory extends Factory
     public function definition(): array
     {
         return [
-            'user_id'              => 1,
-            'order_number'         => $this->faker->unique()->numberBetween(100000, 999999),
-            'customer_name'        => $this->faker->name(),
-            'customer_phone'       => $this->faker->phoneNumber(),
-            'device'               => $this->faker->word(),
-            'problem_description'  => $this->faker->sentence(),
+            'user_id' => 1,
+            'order_number' => $this->faker->unique()->numberBetween(100000, 999999),
+            'customer_name' => $this->faker->name(),
+            'customer_phone' => $this->faker->phoneNumber(),
+            'device' => $this->faker->word(),
+            'problem_description' => $this->faker->sentence(),
             'solution_description' => $this->faker->sentence(),
-            'component'            => $this->faker->word(),
-            'note'                 => $this->faker->sentence(),
-            'date'                 => $this->faker->date(),
-            'invoice'              => $this->faker->word(),
-            'cost'                 => $this->faker->randomFloat(2, 0, 1000),
-            'price'                => $this->faker->randomFloat(2, 0, 1000),
+            'component' => $this->faker->word(),
+            'note' => $this->faker->sentence(),
+            'date' => $this->faker->date(),
+            'invoice' => $this->faker->word(),
+            'cost' => $this->faker->randomFloat(2, 0, 1000),
+            'price' => $this->faker->randomFloat(2, 0, 1000),
             'is_ordered_component' => $this->faker->boolean(),
-            'is_called'            => $this->faker->boolean(),
-            'is_fixed'             => $this->faker->boolean(),
-            'is_picked_up'         => $this->faker->boolean(),
+            'is_called' => $this->faker->boolean(),
+            'is_fixed' => $this->faker->boolean(),
+            'is_picked_up' => $this->faker->boolean(),
 
         ];
     }

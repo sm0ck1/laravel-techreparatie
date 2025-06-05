@@ -21,7 +21,7 @@ class DatabaseSeeder extends Seeder
         \App\Models\User::factory()->create([
             'name' => 'Test Serhii',
             'email' => 'seregae861@gmail.com',
-            'access'=> false
+            'access' => false,
         ]);
 
         \App\Models\Repair::factory(10)->create();

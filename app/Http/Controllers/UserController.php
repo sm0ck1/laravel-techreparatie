@@ -2,39 +2,48 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UpdateUserRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
 class UserController extends Controller
 {
-    public function index(Request $request)
+    public function index(Request $request): \Inertia\Response
     {
         $users = User::all();
+
         return Inertia::render('Users/Users', [
-            'users' => $users
+            'users' => $users,
+        ]);
+    }
+
+    public function show(User $user): \Inertia\Response
+    {
+        return Inertia::render('Users/UserEdit', [
+            'user' => $user,
         ]);
     }
 
     public function destroy(User $user)
     {
         $user->delete();
+
         return response()->json([
-            'message' => 'User deleted successfully'
+            'message' => 'User deleted successfully',
         ]);
     }
 
-    function update(Request $request, User $user)
+    public function update(UpdateUserRequest $request, User $user)
     {
-        $user->update($request->all());
-        $res = $user->save();
-        return response()->json([
-            'message' => 'User updated successfully',
-            'res'     => $res
-        ]);
+
+        $user->update($request->validated());
+        $user->save();
+
+        return back()->with('message', 'User updated successfully');
     }
 
-    function store(Request $request)
+    public function store(Request $request)
     {
         $user = new User();
         $user->name = $request->name;
@@ -44,8 +53,9 @@ class UserController extends Controller
         $user->password = $request->password;
         $user->access = $request->access;
         $user->save();
+
         return response()->json([
-            'message' => 'User created successfully'
+            'message' => 'User created successfully',
         ]);
     }
 }

@@ -4,14 +4,14 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class RepairFixedRequest extends FormRequest
+class UpdateUserRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
      */
     public function authorize(): bool
     {
-        return Auth()->check();
+        return auth()->check();
     }
 
     /**
@@ -21,11 +21,16 @@ class RepairFixedRequest extends FormRequest
      */
     public function rules(): array
     {
+        $fields = [];
+        if ($this->input('password') && $this->input('password_confirmation')){
+            $fields = [
+                'password' => ['required', 'string', 'min:8', 'confirmed'],
+            ];
+        }
+
         return [
-            'is_fixed' => 'required|int',
-            'user_id' => 'required|integer',
-            'price' => 'required|numeric',
-            'solution_description' => 'required|string',
+            ...$fields,
+            'access' => 'required|int',
         ];
     }
 }

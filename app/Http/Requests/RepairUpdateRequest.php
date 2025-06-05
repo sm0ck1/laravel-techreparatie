@@ -24,22 +24,22 @@ class RepairUpdateRequest extends FormRequest
     {
 
         return [
-            'user_id'              => 'nullable',
-            'who_ordered_id'       => 'nullable',
-            'order_number'         => 'nullable',
-            'customer_name'        => 'nullable',
-            'customer_phone'       => 'nullable',
-            'device'               => 'nullable',
-            'problem_description'  => 'nullable',
+            'user_id' => 'nullable',
+            'who_ordered_id' => 'nullable',
+            'order_number' => 'nullable',
+            'customer_name' => 'nullable',
+            'customer_phone' => 'nullable',
+            'device' => 'nullable',
+            'problem_description' => 'nullable',
             'solution_description' => 'nullable',
-            'note'                 => 'nullable',
-            'order'                => 'nullable',
-            'invoice'              => 'nullable',
-            'cost'                 => 'nullable',
-            'price'                => 'nullable',
-            'called'               => 'nullable',
-            'fixed'                => 'nullable',
-            'picked_up'            => 'nullable',
+            'note' => 'nullable',
+            'order' => 'nullable',
+            'invoice' => 'nullable',
+            'cost' => 'nullable',
+            'price' => 'nullable',
+            'called' => 'nullable',
+            'fixed' => 'nullable',
+            'picked_up' => 'nullable',
         ];
     }
 }

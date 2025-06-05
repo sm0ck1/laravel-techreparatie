@@ -24,12 +24,12 @@ class RepairOrderedRequest extends FormRequest
     {
         return [
             'is_ordered_component' => 'required|boolean',
-            'where_ordered'        => [Rule::requiredIf(function () {
+            'where_ordered' => [Rule::requiredIf(function () {
                 return $this->input('is_ordered_component') == true;
             })],
-            'who_ordered_id'       => 'required|integer',
-            'cost'                 => 'required|min:0|numeric',
-            'component'            => [Rule::requiredIf(function () {
+            'who_ordered_id' => 'required|integer',
+            'cost' => 'required|min:0|numeric',
+            'component' => [Rule::requiredIf(function () {
                 return $this->input('is_ordered_component') == true;
             })],
         ];

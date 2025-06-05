@@ -24,7 +24,7 @@ class RepairPickedUpRequest extends FormRequest
     {
         return [
             'is_picked_up' => 'required|boolean',
-            'invoice'      => '',
+            'invoice' => '',
         ];
     }
 }

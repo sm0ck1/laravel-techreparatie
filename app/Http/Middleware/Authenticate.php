@@ -9,7 +9,6 @@ use Illuminate\Support\Facades\Auth;
 
 class Authenticate extends Middleware
 {
-
     public function handle($request, Closure $next, ...$guards)
     {
         $this->authenticate($request, $guards);
@@ -18,6 +17,7 @@ class Authenticate extends Middleware
             return $next($request);
         } else {
             Auth::logout();
+
             return redirect()->route('login')->with('message', 'You do not have access to this application.');
         }
     }

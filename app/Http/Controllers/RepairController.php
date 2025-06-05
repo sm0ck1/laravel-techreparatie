@@ -9,15 +9,16 @@ use App\Http\Requests\RepairOrderedRequest;
 use App\Http\Requests\RepairPickedUpRequest;
 use App\Http\Requests\RepairStoreRequest;
 use App\Http\Requests\RepairUpdateRequest;
+use App\Mail\OrderDone;
 use App\Models\Repair;
 use App\Models\User;
+use Illuminate\Support\Facades\Mail;
 use Inertia\Inertia;
 use Spatie\QueryBuilder\AllowedFilter;
 use Spatie\QueryBuilder\QueryBuilder;
 
 class RepairController extends Controller
 {
-
     //find result of repair for id and customer phone then return only statuses
     public function resultOfRepair()
     {
@@ -35,12 +36,13 @@ class RepairController extends Controller
         if ($result) {
             return response()->json([
                 'message' => 'Repair found',
-                'res'     => $result
+                'res' => $result,
             ]);
         }
+
         return response()->json([
             'message' => 'Repair not found',
-            'res'     => $result
+            'res' => $result,
         ]);
 
     }
@@ -67,11 +69,12 @@ class RepairController extends Controller
         $employees = User::where('role', 'employee')->where('access', true)->get();
         $groupWhereOrdered = Repair::whereNotNull('where_ordered')->groupBy('where_ordered')->get(['where_ordered']);
         $groupDevices = Repair::whereNotNull('device')->groupBy('device')->get(['device']);
+
         return Inertia::render('Repairs/Repairs', [
-            'repairs'           => $repairs,
-            'employees'         => $employees,
+            'repairs' => $repairs,
+            'employees' => $employees,
             'groupWhereOrdered' => $groupWhereOrdered,
-            'groupDevices'      => $groupDevices
+            'groupDevices' => $groupDevices,
         ]);
     }
 
@@ -89,12 +92,13 @@ class RepairController extends Controller
         if ($repair->save()) {
             return response()->json([
                 'message' => 'Repair updated successfully',
-                'res'     => $repair
+                'res' => $repair,
             ]);
         }
+
         return response()->json([
             'message' => 'Repair updated failed',
-            'res'     => $repair
+            'res' => $repair,
         ]);
     }
 
@@ -104,14 +108,20 @@ class RepairController extends Controller
         $updateRepair['date_fixed'] = date('Y-m-d H:i:s');
         $repair->update($updateRepair);
         if ($repair->save()) {
+            if ($repair->is_fixed && ! empty($repair->customer_email)) {
+                Mail::to($repair->customer_email)
+                    ->send(new OrderDone($repair));
+            }
+
             return response()->json([
                 'message' => 'Repair updated successfully',
-                'res'     => $repair
+                'res' => $repair,
             ]);
         }
+
         return response()->json([
             'message' => 'Repair updated failed',
-            'res'     => $repair
+            'res' => $repair,
         ]);
     }
 
@@ -123,12 +133,13 @@ class RepairController extends Controller
         if ($repair->save()) {
             return response()->json([
                 'message' => 'Repair updated successfully',
-                'res'     => $repair
+                'res' => $repair,
             ]);
         }
+
         return response()->json([
             'message' => 'Repair updated failed',
-            'res'     => $repair
+            'res' => $repair,
         ]);
     }
 
@@ -144,12 +155,13 @@ class RepairController extends Controller
         if ($repair->save()) {
             return response()->json([
                 'message' => 'Repair updated successfully',
-                'res'     => $repair
+                'res' => $repair,
             ]);
         }
+
         return response()->json([
             'message' => 'Repair updated failed',
-            'res'     => $repair
+            'res' => $repair,
         ]);
 
     }
@@ -162,12 +174,13 @@ class RepairController extends Controller
         if ($repair->save()) {
             return response()->json([
                 'message' => 'Repair updated successfully',
-                'res'     => $repair
+                'res' => $repair,
             ]);
         }
+
         return response()->json([
             'message' => 'Repair updated failed',
-            'res'     => $repair
+            'res' => $repair,
         ]);
     }
 
@@ -179,12 +192,13 @@ class RepairController extends Controller
         if ($repair->save()) {
             return response()->json([
                 'message' => 'Repair updated successfully',
-                'res'     => $repair
+                'res' => $repair,
             ]);
         }
+
         return response()->json([
             'message' => 'Repair updated failed',
-            'res'     => $repair
+            'res' => $repair,
         ]);
     }
 
@@ -195,8 +209,9 @@ class RepairController extends Controller
             AllowedFilter::scope('need_order'),
             AllowedFilter::scope('need_call'),
         ])->count();
+
         return response()->json([
-            'total' => $repairs
+            'total' => $repairs,
         ]);
     }
 
@@ -205,12 +220,13 @@ class RepairController extends Controller
         if ($repair->delete()) {
             return response()->json([
                 'message' => 'Repair deleted successfully',
-                'res'     => $repair
+                'res' => $repair,
             ]);
         }
+
         return response()->json([
             'message' => 'Repair deleted failed',
-            'res'     => $repair
+            'res' => $repair,
         ]);
     }
 }

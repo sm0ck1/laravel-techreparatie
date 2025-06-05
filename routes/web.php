@@ -21,17 +21,17 @@ use Inertia\Inertia;
 Route::get('/', function () {
     return Redirect::to('/dashboard');
 
-//    return Inertia::render('Welcome', [
-//        'canLogin' => Route::has('login'),
-//        'canRegister' => Route::has('register'),
-//        'laravelVersion' => Application::VERSION,
-//        'phpVersion' => PHP_VERSION,
-//    ]);
+    //    return Inertia::render('Welcome', [
+    //        'canLogin' => Route::has('login'),
+    //        'canRegister' => Route::has('register'),
+    //        'laravelVersion' => Application::VERSION,
+    //        'phpVersion' => PHP_VERSION,
+    //    ]);
 });
 
 Route::get('/dashboard', function () {
     return Redirect::to('/repairs');
-//    return Inertia::render('Dashboard/Dashboard');
+    //    return Inertia::render('Dashboard/Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
@@ -53,8 +53,10 @@ Route::middleware('auth')->group(function () {
     Route::patch('/repairs/{repair}/picked', [RepairController::class, 'updatePickedUp'])->name('repairs.update.picked');
 });
 
-Route::middleware('auth')->group(function (){
+Route::middleware('auth')->group(function () {
     Route::get('/users', [\App\Http\Controllers\UserController::class, 'index'])->name('employees.index');
+    Route::get('/users/{user}', [\App\Http\Controllers\UserController::class, 'show'])->name('employees.show');
+    Route::patch('/users/{user}', [\App\Http\Controllers\UserController::class, 'update'])->name('employees.update');
 });
 
 require __DIR__.'/auth.php';

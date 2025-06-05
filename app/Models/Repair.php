@@ -55,7 +55,7 @@ class Repair extends Model
     {
         return Attribute::make(
             set: function ($value) {
-                return number_format((float)$value, 2, '.', '');
+                return number_format((float) $value, 2, '.', '');
             }
         );
     }
@@ -64,7 +64,7 @@ class Repair extends Model
     {
         return Attribute::make(
             set: function ($value) {
-                return number_format((float)$value, 2, '.', '');
+                return number_format((float) $value, 2, '.', '');
             }
         );
     }
@@ -72,36 +72,35 @@ class Repair extends Model
     protected function dateDiagnostic(): Attribute
     {
         return Attribute::make(
-            get: fn($value) => $value ? \Carbon\Carbon::parse($value)->format('d.m.Y') : null,
+            get: fn ($value) => $value ? \Carbon\Carbon::parse($value)->format('d.m.Y') : null,
         );
     }
 
     protected function dateOrdered(): Attribute
     {
         return Attribute::make(
-            get: fn($value) => $value ? \Carbon\Carbon::parse($value)->format('d.m.Y') : null,
+            get: fn ($value) => $value ? \Carbon\Carbon::parse($value)->format('d.m.Y') : null,
         );
     }
 
     protected function dateCalled(): Attribute
     {
         return Attribute::make(
-            get: fn($value) => $value ? \Carbon\Carbon::parse($value)->format('d.m.Y') : null,
+            get: fn ($value) => $value ? \Carbon\Carbon::parse($value)->format('d.m.Y') : null,
         );
     }
-
 
     protected function dateFixed(): Attribute
     {
         return Attribute::make(
-            get: fn($value) => $value ? \Carbon\Carbon::parse($value)->format('d.m.Y') : null,
+            get: fn ($value) => $value ? \Carbon\Carbon::parse($value)->format('d.m.Y') : null,
         );
     }
 
     protected function datePickedUp(): Attribute
     {
         return Attribute::make(
-            get: fn($value) => $value ? \Carbon\Carbon::parse($value)->format('d.m.Y') : null,
+            get: fn ($value) => $value ? \Carbon\Carbon::parse($value)->format('d.m.Y') : null,
         );
     }
 
@@ -132,7 +131,7 @@ class Repair extends Model
         $query->where(function ($builder) {
             $builder->where('is_called', 0)
                 ->orWhere('is_called', 2);
-//                ->orWhereDate('date_called', '>=', Carbon::now()->addDay()->format('Y-m-d 00:00:00'));
+            //                ->orWhereDate('date_called', '>=', Carbon::now()->addDay()->format('Y-m-d 00:00:00'));
         })->where('is_fixed', '>', 0)->where('is_picked_up', 0);
     }
 }
