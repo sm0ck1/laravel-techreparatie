@@ -28,8 +28,6 @@ const UserEdit = ({user}) => {
             onSuccess: () => {
                 router.reload({only: ['user']});
                 enqueueSnackbar('Saved', snackBarStore());
-
-
             },
             onError: (errors) => {
                 if (errors.password) {
